@@ -419,7 +419,7 @@
                                       <div class="media flex-column">
                                           <div class="product-thumbnail position-relative">
                                               <span class="badge badge-danger top-right">New</span>
-                                              <a href="single-product.html">
+                                              <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                   <img
                                                       class="first-img"
                                                       src="{{asset('uploads/product/'.$item->image)}}"
@@ -476,7 +476,7 @@
                                           <div class="media-body w-100">
                                               <div class="product-desc">
                                                   <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
-                                                      <a>{{$item->name}}</a>
+                                                      <a {{ route('product', ['id'=>$item->id]) }}>{{$item->name}}</a>
                                                   </h3>
                                                   <div class="star-rating">
                                                       <span class="ion-ios-star"></span>
@@ -527,7 +527,7 @@
                                           <div class="media flex-column">
                                               <div class="product-thumbnail position-relative">
                                                   <span class="badge badge-danger top-right">New</span>
-                                                  <a href="single-product.html">
+                                                  <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                       <img
                                                           class="first-img"
                                                           src="{{asset('uploads/product/'.$item->image)}}"
@@ -584,7 +584,7 @@
                                               <div class="media-body w-100">
                                                   <div class="product-desc">
                                                       <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
-                                                          <a>{{$item->name}}</a>
+                                                          <a {{ route('product', ['id'=>$item->id]) }}>{{$item->name}}</a>
                                                       </h3>
                                                       <div class="star-rating">
                                                           <span class="ion-ios-star"></span>
@@ -688,7 +688,7 @@
                               <div class="media flex-column">
                                   <div class="product-thumbnail position-relative">
                                       <span class="badge badge-danger top-right">New</span>
-                                      <a href="single-prsoduct.html">
+                                      <a href="{{ route('product', ['id'=>$item->id]) }}">
                                           <img
                                               class="first-img"
                                               src="{{ asset('uploads/product/'.$item->image) }}"
@@ -745,7 +745,7 @@
                                   <div class="media-body w-100">
                                       <div class="product-desc">
                                           <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
-                                              <a>{{$item->name}}</a>
+                                              <a href="{{ route('product',['id'=>$item->id]) }}">{{$item->name}}</a>
                                           </h3>
                                           <div class="star-rating">
                                               <span class="ion-ios-star"></span>
