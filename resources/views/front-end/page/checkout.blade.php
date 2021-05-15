@@ -99,7 +99,7 @@
                         @foreach ($cart->items as $item)
                           <li>
                             <span class="order-middle-left">{{ $item['name'] }}</span>
-                            <span class="order-price">{{ '$ '.$item['price']*$item->quantity }} </span>
+                            <span class="order-price">{{ '$ '.$item['price']*$item['quantity'] }} </span>
                           </li>
                           @php
                               $total += $item['quantity']*$item['price'];
