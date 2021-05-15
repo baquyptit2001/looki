@@ -83,7 +83,7 @@
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <a href="#" id="write-comment"><span class="ml-2"><i class="far fa-comment-dots"></i></span>
-                                Read reviews <span>({{ count($rate) }})</span></a>
+                                Read reviews <span>({{ count($rate).'(s)' }})</span></a>
                             <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="edite"><i
                                         class="far fa-edit"></i></span> Write a
                                 review</a>
