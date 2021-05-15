@@ -475,9 +475,9 @@
                                           </div>
                                           <div class="media-body w-100">
                                               <div class="product-desc">
-                                                  <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
-                                                      <a {{ route('product', ['id'=>$item->id]) }}>{{$item->name}}</a>
-                                                  </h3>
+                                                <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
+                                                    <a href="{{route('product', ['id'=>$item->id])}}">{{$item->name}}</a>
+                                                </h3>
                                                   <div class="star-rating">
                                                       <span class="ion-ios-star"></span>
                                                       <span class="ion-ios-star"></span>
@@ -584,7 +584,7 @@
                                               <div class="media-body w-100">
                                                   <div class="product-desc">
                                                       <h3 class="title" title="{{$item->name}}" style="text-overflow:ellipsis; overflow: hidden; white-space: nowrap;">
-                                                          <a {{ route('product', ['id'=>$item->id]) }}>{{$item->name}}</a>
+                                                          <a href="{{route('product', ['id'=>$item->id])}}">{{$item->name}}</a>
                                                       </h3>
                                                       <div class="star-rating">
                                                           <span class="ion-ios-star"></span>
