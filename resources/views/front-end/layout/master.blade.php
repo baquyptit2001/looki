@@ -66,6 +66,10 @@
           font-family: FontAwesome;
           font-weight: 900;
       }
+
+      .heart-red{
+        color: red;
+      }
     </style>
     {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
 
@@ -258,55 +262,34 @@
       <span class="title">Wishlist</span>
       <button class="offcanvas-close">×</button>
     </div>
+@if (Auth::user())
     <ul class="minicart-product-list">
-      <li>
-        <a href="single-product.html" class="image"
-          ><img src="{{ asset('assets/img/mini-cart/4.png') }}" alt="Cart product Image"
-        /></a>
-        <div class="content">
-          <a href="single-product.html" class="title"
-            >orginal Age Defying Cosmetics Makeup</a
-          >
-          <span class="quantity-price"
-            >1 x <span class="amount">$100.00</span></span
-          >
-          <a href="#" class="remove">×</a>
-        </div>
-      </li>
-      <li>
-        <a href="single-product.html" class="image"
-          ><img src="{{ asset('assets/img/mini-cart/5.png') }}" alt="Cart product Image"
-        /></a>
-        <div class="content">
-          <a href="single-product.html" class="title"
-            >On Trend Makeup and Beauty Cosmetics</a
-          >
-          <span class="quantity-price"
-            >1 x <span class="amount">$35.00</span></span
-          >
-          <a href="#" class="remove">×</a>
-        </div>
-      </li>
-      <li>
-        <a href="single-product.html" class="image"
-          ><img src="{{ asset('assets/img/mini-cart/6.png') }}" alt="Cart product Image"
-        /></a>
-        <div class="content">
-          <a href="single-product.html" class="title"
-            >orginal Age Defying Cosmetics Makeup</a
-          >
-          <span class="quantity-price"
-            >1 x <span class="amount">$9.00</span></span
-          >
-          <a href="#" class="remove">×</a>
-        </div>
-      </li>
+      @foreach ($wishlist as $item)
+        <li>
+          <a href="{{ route('product', ['id'=>$item->product_id]) }}" class="image"
+            ><img src="{{ asset('uploads/product/'.$item->product->image) }}" alt="Cart product Image"
+          /></a>
+          <div class="content">
+            <a href="{{ route('product', ['id'=>$item->product_id]) }}" class="title"
+              >{{ $item->product->name }}</a
+            >
+            <span class="quantity-price"
+              ><span class="amount">${{ ($item->product->sale_price==0) ? $item->product->price : $item->product->sale_price}}</span></span
+            >
+            <a href="{{ route('removeWishlist', ['id'=>$item->id]) }}" class="remove">×</a>
+          </div>
+        </li>
+      @endforeach
     </ul>
     <a
       href="{{ Route('wishlist') }}"
       class="btn btn-secondary btn--lg d-block d-sm-inline-block mt-30"
       >view wishlist</a
     >
+  
+    @else
+    <p><a href="{{ route('login') }}" style="color: #5a5ad0">Login </a>to view Wish List</p>
+    @endif
   </div>
 </div>
 <!-- OffCanvas Wishlist End -->
@@ -634,7 +617,7 @@
                   <a class="offcanvas-toggle" href="#offcanvas-wishlist">
                     <span class="position-relative">
                       <i class="icon-heart"></i>
-                      <span class="badge cbdg1">3</span>
+                      <span class="badge cbdg1">{{ (Auth::user()) ? count($wishlist) : '0' }}</span>
                     </span>
                   </a>
                 </li>

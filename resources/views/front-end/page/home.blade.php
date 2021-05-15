@@ -320,7 +320,7 @@
                                           <!-- product links -->
                                           <ul class="actions d-flex justify-content-center">
                                               <li>
-                                                  <a class="action" href="wishlist.html">
+                                                  <a class="action" href="{{ route('addWishlist', ['id'=>$item->id]) }}">
                                 <span
                                     data-toggle="tooltip"
                                     data-placement="bottom"

@@ -142,7 +142,7 @@
                                 </div>
                             </div>
                             <div class="addto-whish-list">
-                                <a href="#"><i class="icon-heart"></i> Add to wishlist</a>
+                                <a href="{{ route('addWishlist', ['id'=>$pro->id]) }}"><i class="icon-heart"></i> Add to wishlist</a>
                                 <a href="#"><i class="icon-shuffle"></i> Add to compare</a>
                             </div>
                             <div class="pro-social-links mt-10">
