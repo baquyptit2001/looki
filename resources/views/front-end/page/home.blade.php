@@ -492,13 +492,12 @@
                                                       <span><del>{{$item->price}} $</del></span>
 
                                                       <div class="d-flex justify-content-end w-50">
-                                                          <button
+                                                          <a
                                                               class="pro-btn"
-                                                              data-toggle="modal"
-                                                              data-target="#add-to-cart"
+                                                              href="{{route('add-cart', $item->id)}}"
                                                           >
                                                               <i class="icon-basket"></i>
-                                                          </button>
+                                                        </a>
                                                       </div>
                                                   </div>
                                               </div>
@@ -604,13 +603,12 @@
                                                           @endif
 
                                                           <div class="d-flex justify-content-end w-50">
-                                                              <button
+                                                              <a
                                                                   class="pro-btn"
-                                                                  data-toggle="modal"
-                                                                  data-target="#add-to-cart"
+                                                                  href="{{route('add-cart', $item->id)}}"
                                                               >
                                                                   <i class="icon-basket"></i>
-                                                              </button>
+                                                              </a>
                                                           </div>
                                                       </div>
                                                   </div>
@@ -764,13 +762,12 @@
                                                   <span><del>{{$item->price}} $</del></span>
                                               @endif
                                               <div class="d-flex justify-content-end w-50">
-                                                  <button
+                                                  <a
                                                       class="pro-btn"
-                                                      data-toggle="modal"
-                                                      data-target="#add-to-cart"
+                                                      href="{{route('add-cart', $item->id)}}"
                                                   >
                                                       <i class="icon-basket"></i>
-                                                  </button>
+                                                  </a>
                                               </div>
                                           </div>
                                       </div>
