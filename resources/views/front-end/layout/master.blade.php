@@ -630,22 +630,22 @@
               <div class="social-network">
                 <ul class="d-flex">
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank"
+                    <a href="https://www.facebook.com/bquyptit2001/" target="_blank"
                       ><span class="icon-social-facebook"></span
                     ></a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/" target="_blank"
+                    <a href="https://www.facebook.com/bquyptit2001/" target="_blank"
                       ><span class="icon-social-twitter"></span
                     ></a>
                   </li>
                   <li>
-                    <a href="https://www.youtube.com/" target="_blank"
+                    <a href="https://www.facebook.com/bquyptit2001/" target="_blank"
                       ><span class="icon-social-youtube"></span
                     ></a>
                   </li>
                   <li class="mr-0">
-                    <a href="https://www.instagram.com/" target="_blank"
+                    <a href="https://www.facebook.com/bquyptit2001/" target="_blank"
                       ><span class="icon-social-instagram"></span
                     ></a>
                   </li>
@@ -924,16 +924,16 @@
                     <ul class="d-flex align-items-center">
                       <li class="share">Share</li>
                       <li>
-                        <a href="#"><i class="ion-social-facebook"></i></a>
+                        <a href="https://www.facebook.com/bquyptit2001/"><i class="ion-social-facebook"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="ion-social-twitter"></i></a>
+                        <a href="https://www.facebook.com/bquyptit2001/"><i class="ion-social-twitter"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="ion-social-google"></i></a>
+                        <a href="https://www.facebook.com/bquyptit2001/"><i class="ion-social-google"></i></a>
                       </li>
                       <li>
-                        <a href="#"><i class="ion-social-pinterest"></i></a>
+                        <a href="https://www.facebook.com/bquyptit2001/"><i class="ion-social-pinterest"></i></a>
                       </li>
                     </ul>
                   </div>
