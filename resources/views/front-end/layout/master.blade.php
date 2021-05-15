@@ -412,7 +412,7 @@
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  >{{ (Auth::user()) ? "Hello, ".Auth::user()->display_name :'Setting' }} <i class="ion ion-ios-arrow-down"></i
+                  >{{ (Auth::user()) ? "Hello, ".Auth::user()->display_name :'Account' }} <i class="ion ion-ios-arrow-down"></i
                 ></a>
                 <ul
                   class="topnav-submenu dropdown-menu"
