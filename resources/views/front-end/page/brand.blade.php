@@ -77,7 +77,7 @@
                                     <div class="card-body">
                                         <div class="product-thumbnail position-relative">
                                             <span class="badge badge-danger top-right">New</span>
-                                            <a href="single-product.html">
+                                            <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                 <img class="first-img" src="{{ asset('uploads/product/'.$item->image) }}" alt="thumbnail">
                                             </a>
                                             <!-- product links -->
@@ -146,7 +146,7 @@
                                         <div class="media flex-column flex-md-row">
                                             <div class="product-thumbnail position-relative">
                                                 <span class="badge badge-danger top-right">sale</span>
-                                                <a href="single-product.html">
+                                                <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                     <img class="first-img" src="{{ asset('uploads/product/'.$item->image) }}" alt="thumbnail" style="width:400px !important;">
                                                 </a>
                                                 <!-- product links -->

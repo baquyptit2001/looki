@@ -286,7 +286,6 @@
       class="btn btn-secondary btn--lg d-block d-sm-inline-block mt-30"
       >view wishlist</a
     >
-  
     @else
     <p><a href="{{ route('login') }}" style="color: #5a5ad0">Login </a>to view Wish List</p>
     @endif

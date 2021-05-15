@@ -107,7 +107,7 @@
                                             <div class="card-body">
                                                 <div class="product-thumbnail position-relative">
                                                     <span class="badge badge-danger top-right">New</span>
-                                                    <a href="single-product.html">
+                                                    <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                         <img
                                                             class="first-img"
                                                             src="{{asset('uploads/product/'.$item->image)}}"
@@ -227,7 +227,7 @@
                         <span class="badge badge-danger top-right"
                         >featured</span
                         >
-                                                        <a href="single-product.html">
+                                                        <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                             <img
                                                                 class="first-img"
                                                                 src="{{asset('uploads/product/'.$item->image)}}"
