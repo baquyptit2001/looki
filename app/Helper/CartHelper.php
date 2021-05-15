@@ -12,6 +12,8 @@ class CartHelper {
     }
 
     public function add($product, $quantity=1){
+        if($quantity==null)
+            $quantity=1;
         $item = [
           'id'=>$product->id,
           'name'=>$product->name,
