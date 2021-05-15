@@ -308,8 +308,8 @@
                   ><img src="{{asset('uploads/product/'.$item['image'])}}" alt="Cart product Image"
                 /></a>
                 <div class="content">
-                  <a href="single-product.html" class="title"
-                    >orginal Age Defying Cosmetics Makeup</a
+                  <a href="{{ route('product', ['id'=>$item['id']]) }}" class="title"
+                    >{{ $item['name'] }}</a
                   >
                   <span class="quantity-price"
                     >{{$item['quantity']}} x <span class="amount">{{$item['price']}} $</span></span
