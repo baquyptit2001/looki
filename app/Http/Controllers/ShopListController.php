@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Brand;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ShopListController extends Controller
@@ -16,7 +17,8 @@ class ShopListController extends Controller
 //            $total++;
 //        }
         $request->session()->put('view', 1);
-        return view('front-end.page.shop-list', compact('product', 'total'));
+        $cat = Category::where('parent_id', 0)->get();
+        return view('front-end.page.shop-list', compact('product', 'total', 'cat'));
     }
 
     public function menu(Request $request){
@@ -34,5 +36,12 @@ class ShopListController extends Controller
         $brand = Brand::find($id);
         $product = Product::where('brand_id', $id)->get();
         return view('front-end.page.brand', compact('product', 'brand'));
+    }
+
+    public function category($id)
+    {
+        $category = Category::find($id);
+        $product = Product::where('category_id', $id)->get();
+        return view('front-end.page.category', compact('product', 'category'));
     }
 }

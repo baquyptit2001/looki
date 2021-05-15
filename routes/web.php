@@ -97,5 +97,6 @@ Route::post('/update',[CartController::class,'update'])->name('cart-update');
 Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete-cart');
 Route::post('/checkout',[CartController::class, 'cartCheckout'])->name('cartCheckout');
 Route::get('/brand/{id}', [ShopListController::class, 'brand'])->name('brand');
+Route::get('/category/{id}', [ShopListController::class, 'category'])->name('category');
 //Route::get('/shop-list',[ShopListController::class,'list'])->name('list-view');
 //Route::get('/shop-list',[ShopListController::class,'menu'])->name('menu-view');

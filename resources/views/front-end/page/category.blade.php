@@ -1,6 +1,6 @@
 @extends('front-end.layout.master')
 
-@section('title', $brand->name)
+@section('title', $category->name)
 
 @section('main')
 <nav class="breadcrumb-section theme1 bg-lighten2 pt-110 pb-110">
@@ -9,7 +9,7 @@
         <div class="col-12">
             <div class="section-title text-center">
             <h2 class="title pb-4 text-dark text-capitalize">
-                {{ $brand->name }}
+                {{ $category->name }}
             </h2>
             </div>
         </div>
