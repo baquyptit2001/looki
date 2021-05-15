@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use App\Models\Wishlist;
 use App\Helper\CartHelper;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with([
                 'cart'=>new CartHelper(),
                 'wishlist'=>Wishlist::where('user_id', Auth::id())->get(),
+                'masterCat' => Category::where('parent_id', 0)->get(),
             ]);
         });
     }

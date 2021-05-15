@@ -489,67 +489,18 @@
                 >Shop <i class="ion-ios-arrow-down"></i
               ></a>
               <ul class="mega-menu row">
-                <li class="col-3">
-                  <ul>
-                    <li class="mega-menu-title"><a href="#">Shop Grid</a></li>
-                    <li>
-                      <a href="shop-grid-3-column.html">Shop Grid 3 Column</a>
-                    </li>
-                    <li>
-                      <a href="shop-grid-4-column.html">Shop Grid 4 Column</a>
-                    </li>
-                    <li>
-                      <a href="shop-grid-left-sidebar.html"
-                        >Shop Grid Left Sidebar</a
-                      >
-                    </li>
-                    <li>
-                      <a href="shop-grid-right-sidebar.html"
-                        >Shop Grid Right Sidebar</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="col-3">
-                  <ul>
-                    <li class="mega-menu-title"><a href="{{route('shop-list')}}">Shop List</a></li>
-                    <li><a href="{{route('shop-list')}}">Shop List</a></li>
-                    <li>
-                      <a href="shop-grid-list-left-sidebar.html"
-                        >Shop List Left Sidebar</a
-                      >
-                    </li>
-                    <li>
-                      <a href="shop-grid-list-right-sidebar.html"
-                        >Shop List Right Sidebar</a
-                      >
-                    </li>
-                  </ul>
-                </li>
-                <li class="col-3">
-                  <ul>
-                    <li class="mega-menu-title"><a href="#">Shop Single</a></li>
-                    <li><a href="single-product.html">Shop Single</a></li>
-                    <li>
-                      <a href="single-product-configurable.html"
-                        >Shop Variable</a
-                      >
-                    </li>
-                    <li>
-                      <a href="single-product-affiliate.html">Shop Affiliate</a>
-                    </li>
-                    <li><a href="single-product-group.html">Shop Group</a></li>
-                  </ul>
-                </li>
-                <li class="col-3">
-                  <ul>
-                    <li class="mega-menu-title"><a href="#">other pages</a></li>
-                    <li><a href="{{ Route('about') }}">About Page</a></li>
-                    <li><a href="{{ Route('cart') }}">Cart Page</a></li>
-                    <li><a href="{{ Route('checkout') }}">Checkout Page</a></li>
-                    <li><a href="{{ Route('compare') }}">Compare Page</a></li>
-                  </ul>
-                </li>
+                @foreach ($masterCat as $item)
+                  <li class="col-3">
+                    <ul>
+                      <li class="mega-menu-title"><a href="#">{{ $item->name }}</a></li>
+                      @foreach ($item->child as $child)
+                        <li>
+                          <a href="{{ route('category', ['id'=>$child->id]) }}">{{ $child->name }}</a>
+                        </li>
+                      @endforeach
+                    </ul>
+                  </li>
+                @endforeach
                 <li class="col-6 mt-4">
                   <a href="single-product.html" class="zoom-in overflow-hidden"
                     ><img src="{{ asset('assets/img/mega-menu/1.jpg') }}" alt="img"
@@ -565,6 +516,7 @@
             <li>
               <a href="#">Pages <i class="ion-ios-arrow-down"></i></a>
               <ul class="sub-menu">
+                <li><a href="{{ Route('shop-list') }}">Product List</a></li>
                 <li><a href="{{ Route('about') }}">About Page</a></li>
                 <li><a href="{{ Route('cart') }}">Cart Page</a></li>
                 <li><a href="{{ Route('checkout') }}">Checkout Page</a></li>
