@@ -138,73 +138,24 @@
         <li>
           <a href="#"><span class="menu-text">Shop</span></a>
           <ul class="offcanvas-submenu">
-            <li>
-              <a href="#"><span class="menu-text">Shop Grid</span></a>
-              <ul class="offcanvas-submenu">
-                <li>
-                  <a href="shop-grid-3-column.html">Shop Grid 3 Column</a>
-                </li>
-                <li>
-                  <a href="shop-grid-4-column.html">Shop Grid 4 Column</a>
-                </li>
-                <li>
-                  <a href="shop-grid-left-sidebar.html"
-                    >Shop Grid Left Sidebar</a
-                  >
-                </li>
-                <li>
-                  <a href="shop-grid-right-sidebar.html"
-                    >Shop Grid Right Sidebar</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="{{route('shop-list')}}"><span class="menu-text">Shop List</span></a>
-              <ul class="offcanvas-submenu">
-                <li><a href="{{route('shop-list')}}">Shop List</a></li>
-                <li>
-                  <a href="shop-grid-list-left-sidebar.html"
-                    >Shop List Left Sidebar</a
-                  >
-                </li>
-                <li>
-                  <a href="shop-grid-list-right-sidebar.html"
-                    >Shop List Right Sidebar</a
-                  >
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><span class="menu-text">Shop Single</span></a>
-              <ul class="offcanvas-submenu">
-                <li><a href="single-product.html">Shop Single</a></li>
-                <li>
-                  <a href="single-product-configurable.html">Shop Variable</a>
-                </li>
-                <li>
-                  <a href="single-product-affiliate.html">Shop Affiliate</a>
-                </li>
-                <li><a href="single-product-group.html">Shop Group</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#"><span class="menu-text">other pages</span></a>
-              <ul class="offcanvas-submenu">
-                <li><a href="{{ Route('about') }}">About Page</a></li>
-                <li><a href="{{ Route('cart') }}">Cart Page</a></li>
-                <li><a href="{{ Route('checkout') }}">Checkout Page</a></li>
-                <li><a href="{{ Route('compare') }}">Compare Page</a></li>
-                <li><a href="{{ Route('login') }}">Login &amp; Register Page</a></li>
-                <li><a href="{{ Route('account') }}">Account Page</a></li>
-                <li><a href="{{ Route('wishlist') }}">Wishlist Page</a></li>
-              </ul>
-            </li>
+            @foreach ($masterCat as $item)
+              <li>
+                <a href="#"><span class="menu-text">{{ $item->name }}</span></a>
+                <ul class="offcanvas-submenu">
+                  @foreach ($item->child as $child)
+                    <li>
+                      <a href="{{ route('category', ['id'=>$child->id]) }}">{{ $child->name }}</a>
+                    </li>
+                  @endforeach
+                </ul>
+              </li>
+            @endforeach
           </ul>
         </li>
         <li>
           <a href="#"><span class="menu-text">Pages</span></a>
           <ul class="offcanvas-submenu">
+            <li><a href="{{ Route('shop-list') }}">Product List</a></li>
             <li><a href="{{ Route('about') }}">About Page</a></li>
             <li><a href="{{ Route('cart') }}">Cart Page</a></li>
             <li><a href="{{ Route('checkout') }}">Checkout Page</a></li>
