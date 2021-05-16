@@ -27,6 +27,17 @@ class Product extends Model
     //     return $this->hasMany('App\Models\productSize', 'product_id', 'id');
     // }
 
+    public function check(){
+        if(Auth::check()){
+            if(count(Wishlist::where([
+                ['product_id', '=', $this->id],
+                ['user_id', '=', Auth::id()]
+            ])->get()))
+                return true;
+        }
+        return false;
+    }
+
     public function searchableAs()
     {
         return 'products_index';

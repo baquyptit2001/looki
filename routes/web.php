@@ -77,6 +77,7 @@ Route::get('/account',[MyAccountController::class, 'index'])->name('account');
 Route::get('/wishlist',[WishListController::class, 'index'])->name('wishlist')->middleware('auth');
 Route::get('/addWishlist/{id}',[WishListController::class, 'add'])->name('addWishlist')->middleware('auth');
 Route::get('/removeWishlist/{id}',[WishListController::class, 'remove'])->name('removeWishlist')->middleware('auth');
+Route::get('/removeWishlistSwitch/{id}',[WishListController::class, 'removeSwitch'])->name('removeSwitchWishlist')->middleware('auth');
 Route::get('/contact',[ContactController::class, 'index'])->name('contact');
 Route::get('/login&register',[LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/updateAccount',[AccountController::class, 'infoUpdate'])->name('updateAccount');

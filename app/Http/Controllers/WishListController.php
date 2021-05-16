@@ -32,4 +32,13 @@ class WishListController extends Controller
         $fav->delete();
         return redirect()->back();
     }
+
+    public function removeSwitch($id)
+    {
+        Wishlist::where([
+            ['product_id','=',$id],
+            ['user_id','=',Auth::id()],
+        ])->first()->delete();
+        return redirect()->back();
+    }
 }

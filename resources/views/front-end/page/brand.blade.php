@@ -83,11 +83,27 @@
                                             <!-- product links -->
                                             <ul class="actions d-flex justify-content-center">
                                                 <li>
-                                                    <a class="action" href="wishlist.html">
-                                                        <span data-toggle="tooltip" data-placement="bottom" title=""
-                                                            class="icon-heart" data-original-title="add to wishlist">
-                                                        </span>
-                                                    </a>
+                                                    @if ($item->check())
+                                                    <a class="action" href="{{ route('removeSwitchWishlist', ['id'=>$item->id]) }}">
+                                                    <span
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title="remove from wishlist"
+                                                        class="icon-heart heart-red"
+                                                    >
+                                                    </span>
+                                                                        </a>
+                                                    @else
+                                                    <a class="action" href="{{ route('addWishlist', ['id'=>$item->id]) }}">
+                                                    <span
+                                                        data-toggle="tooltip"
+                                                        data-placement="bottom"
+                                                        title="add to wishlist"
+                                                        class="icon-heart"
+                                                    >
+                                                    </span>
+                                                                        </a>
+                                                    @endif
                                                 </li>
                                                 <li>
                                                     <a class="action" href="#" data-toggle="modal" data-target="#compare">
@@ -152,11 +168,27 @@
                                                 <!-- product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
-                                                        <a class="action" href="wishlist.html">
-                                                            <span data-toggle="tooltip" data-placement="bottom" title=""
-                                                                class="icon-heart" data-original-title="add to wishlist">
-                                                            </span>
-                                                        </a>
+                                                        @if ($item->check())
+                                                        <a class="action" href="{{ route('removeSwitchWishlist', ['id'=>$item->id]) }}">
+                                                        <span
+                                                            data-toggle="tooltip"
+                                                            data-placement="bottom"
+                                                            title="remove from wishlist"
+                                                            class="icon-heart heart-red"
+                                                        >
+                                                        </span>
+                                                                            </a>
+                                                        @else
+                                                        <a class="action" href="{{ route('addWishlist', ['id'=>$item->id]) }}">
+                                                        <span
+                                                            data-toggle="tooltip"
+                                                            data-placement="bottom"
+                                                            title="add to wishlist"
+                                                            class="icon-heart"
+                                                        >
+                                                        </span>
+                                                                            </a>
+                                                        @endif
                                                     </li>
                                                     <li>
                                                         <a class="action" href="#" data-toggle="modal" data-target="#compare">
