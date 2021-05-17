@@ -147,7 +147,13 @@
                                 @else
                                 <a href="{{ route('addWishlist', ['id'=>$pro->id]) }}"><i class="icon-heart"></i> Add to wishlist</a>
                                 @endif
-                                <a href="#"><i class="icon-shuffle"></i> Add to compare</a>
+                                <a @if ($compare->check($item->id))
+                                    href="#"
+                                    data-toggle="modal"
+                                    data-target="#compare"
+                                  @else
+                                    href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                  @endif><i class="icon-shuffle"></i> Add to compare</a>
                             </div>
                             <div class="pro-social-links mt-10">
                                 <ul class="d-flex align-items-center">
@@ -363,7 +369,13 @@
                                                         @endif
                                                     </li>
                                                     <li>
-                                                        <a class="action" href="#" data-toggle="modal" data-target="#compare">
+                                                        <a class="action" @if ($compare->check($item->id))
+                                                                                href="#"
+                                                                                data-toggle="modal"
+                                                                                data-target="#compare"
+                                                                            @else
+                                                                                href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                                            @endif>
                                                             <span data-toggle="tooltip" data-placement="bottom"
                                                                 title="Add to compare" class="icon-shuffle"></span>
                                                         </a>
@@ -397,9 +409,9 @@
                                                             <span class="product-price">{{$item->sale_price}} $</span>
                                                             <span><del>{{$item->price}} $</del></span>
                                                         @endif
-                                                        <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart">
+                                                        <a class="pro-btn" href="{{route('add-cart', $item->id)}}">
                                                             <i class="icon-basket"></i>
-                                                        </button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

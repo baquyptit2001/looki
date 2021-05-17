@@ -31,74 +31,58 @@
         <div class="col-12">
           <h3 class="title mb-30 pb-25 text-capitalize">compare</h3>
           <div class="table-responsive">
-            <table class="table">
-              <thead class="thead-light">
-                <tr>
-                  <th scope="col">product info</th>
-                  <th scope="col" class="text-center">
-                    <img src="assets/img/product/1.png" alt="img" />
-                    <span class="sub-title d-block"
-                      >Originals Kaval nail polish</span
-                    >
-                    <a href="cart.html" class="btn btn-dark btn--lg">
-                      add to cart</a
-                    >
-                  </th>
-                  <th scope="col" class="text-center">
-                    <img src="assets/img/product/2.png" alt="img" />
-                    <span class="sub-title d-block"
-                      >Water and Wind Resistant cream</span
-                    >
-                    <a href="cart.html" class="btn btn-dark btn--lg">
-                      add to cart</a
-                    >
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Price</th>
-                  <td class="text-center">
-                    <span class="whish-list-price"> $38.24 </span>
-                  </td>
-                  <td class="text-center">
-                    <span class="whish-list-price"> $38.24 </span>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Description</th>
-                  <td class="text-center">
-                    <p>Originals Kaval nail polish</p>
-                  </td>
-                  <td class="text-center">
-                    <p>Water and Wind Resistant cream</p>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Availability</th>
-                  <td class="text-center">
-                    <span class="badge badge-danger position-static"
-                      >In Stock</span
-                    >
-                  </td>
-                  <td class="text-center">
-                    <span class="badge badge-danger position-static"
-                      >In Stock</span
-                    >
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">weight</th>
-                  <td class="text-center">500 ml</td>
-                  <td class="text-center">400 ml</td>
-                </tr>
-                <tr>
-                  <th scope="row">colors</th>
-                  <td class="text-center">3</td>
-                  <td class="text-center">4</td>
-                </tr>
-              </tbody>
-            </table>
+            @if (count($compare->items))
+              <table class="table">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">product info</th>
+                    @foreach ($compare->items as $item)
+                      <th scope="col" class="text-center">
+                        <img src="{{ asset('uploads/product/'.$item['image']) }}" alt="img" />
+                        <span class="sub-title d-block"
+                          ><a href="{{ route('product', ['id'=>$item['id']]) }}" >{{ $item['name'] }}</a></span
+                        >
+                        <a href="{{ route('add-cart', ['id'=>$item['id']]) }}" class="btn btn-dark btn--lg">
+                          add to cart</a
+                        >
+                      </th>
+                    @endforeach
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Price</th>
+                    @foreach ($compare->items as $item)
+                      <td class="text-center">
+                        <span class="whish-list-price"> ${{ $item['price'] }} </span>
+                      </td>
+                    @endforeach
+                  </tr>
+                  <tr>
+                    <th scope="row">Description</th>
+                    @foreach ($compare->items as $item)
+                      <td class="text-center">
+                        <p>{{ $item['description'] }}</p>
+                      </td>
+                    @endforeach
+                  </tr>
+                  <tr>
+                    <th scope="row">Size</th>
+                    @foreach ($compare->items as $item)
+                      <td class="text-center">{{ $item['size'] }}</td>  
+                    @endforeach
+                  </tr>
+                  <tr>
+                    <th scope="row">Action</th>
+                    @foreach ($compare->items as $item)
+                      <td class="text-center"><a href="{{ route('removeCompare', ['id'=>$item['id']]) }}">X</a></td>  
+                    @endforeach
+                  </tr>
+                </tbody>
+              </table>
+            @else
+                Không có sản phẩm nào để so sánh
+            @endif
           </div>
         </div>
       </div>

@@ -511,7 +511,7 @@
                   <a href="{{ Route('compare') }}">
                     <span class="position-relative">
                       <i class="icon-shuffle"></i>
-                      <span class="badge cbdg1">1</span>
+                      <span class="badge cbdg1">{{ count($compare->items) }}</span>
                     </span>
                   </a>
                 </li>
@@ -912,7 +912,7 @@
         </div>
         <div class="modal-body">
           <h5 class="title">
-            <i class="fa fa-check"></i> Product added to compare.
+            <i class="fas fa-times"></i> Product have already in compare list.
           </h5>
         </div>
       </div>

@@ -106,7 +106,13 @@
                                                     @endif
                                                 </li>
                                                 <li>
-                                                    <a class="action" href="#" data-toggle="modal" data-target="#compare">
+                                                    <a class="action" @if ($compare->check($item->id))
+                                                        href="#"
+                                                        data-toggle="modal"
+                                                        data-target="#compare"
+                                                      @else
+                                                        href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                      @endif>
                                                         <span data-toggle="tooltip" data-placement="bottom" title=""
                                                             class="icon-shuffle" data-original-title="Add to compare"></span>
                                                     </a>
@@ -140,9 +146,9 @@
                                                         <span class="onsale">{{$item->sale_price}}$</span>
                                                     </span>
                                                 @endif
-                                                <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart">
+                                                <a class="pro-btn" href="{{route('add-cart', $item->id)}}">
                                                     <i class="icon-basket"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -191,7 +197,13 @@
                                                         @endif
                                                     </li>
                                                     <li>
-                                                        <a class="action" href="#" data-toggle="modal" data-target="#compare">
+                                                        <a class="action" @if ($compare->check($item->id))
+                                                            href="#"
+                                                            data-toggle="modal"
+                                                            data-target="#compare"
+                                                          @else
+                                                            href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                          @endif>
                                                             <span data-toggle="tooltip" data-placement="bottom" title=""
                                                                 class="icon-shuffle"
                                                                 data-original-title="Add to compare"></span>
@@ -246,10 +258,9 @@
                                                 <div class="availability-list mb-20">
                                                     <p>Availability: <span>1200 In Stock</span></p>
                                                 </div>
-                                                <button class="btn btn-dark btn--xl" data-toggle="modal"
-                                                    data-target="#add-to-cart">
+                                                <a class="btn btn-dark btn--xl" href="{{route('add-cart', $item->id)}}">
                                                     Add to cart
-                                                </button>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

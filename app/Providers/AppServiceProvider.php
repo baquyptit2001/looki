@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\Wishlist;
 use App\Helper\CartHelper;
+use App\Helper\CompareHelper;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -32,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
                 'cart'=>new CartHelper(),
                 'wishlist'=>Wishlist::where('user_id', Auth::id())->get(),
                 'masterCat' => Category::where('parent_id', 0)->get(),
+                'compare' => new CompareHelper(),
             ]);
         });
     }

@@ -142,9 +142,13 @@
                                                         <li>
                                                             <a
                                                                 class="action"
-                                                                href="#"
-                                                                data-toggle="modal"
-                                                                data-target="#compare"
+                                                                @if ($compare->check($item->id))
+                                                                    href="#"
+                                                                    data-toggle="modal"
+                                                                    data-target="#compare"
+                                                                @else
+                                                                    href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                                @endif
                                                             >
                             <span
                                 data-toggle="tooltip"
@@ -198,13 +202,12 @@
                                                         @endif
 
                                                         <div class="d-flex justify-content-end w-50">
-                                                            <button
+                                                            <a
                                                                 class="pro-btn"
-                                                                data-toggle="modal"
-                                                                data-target="#add-to-cart"
+                                                                href="{{route('add-cart', $item->id)}}"
                                                             >
                                                                 <i class="icon-basket"></i>
-                                                            </button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,9 +278,13 @@
                                                             <li>
                                                                 <a
                                                                     class="action"
-                                                                    href="#"
-                                                                    data-toggle="modal"
-                                                                    data-target="#compare"
+                                                                    @if ($compare->check($item->id))
+                                                                        href="#"
+                                                                        data-toggle="modal"
+                                                                        data-target="#compare"
+                                                                    @else
+                                                                        href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                                    @endif
                                                                 >
                               <span
                                   data-toggle="tooltip"
@@ -346,13 +353,12 @@
                                                         <div class="availability-list mb-20">
                                                             <p>Availability: <span>1200 In Stock</span></p>
                                                         </div>
-                                                        <button
+                                                        <a
                                                             class="btn btn-dark btn--xl"
-                                                            data-toggle="modal"
-                                                            data-target="#add-to-cart"
+                                                            href="{{route('add-cart', $item->id)}}"
                                                         >
                                                             Add to cart
-                                                        </button>
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

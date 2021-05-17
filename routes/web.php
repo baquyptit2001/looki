@@ -73,6 +73,8 @@ Route::get('/about',[AboutController::class, 'index'])->name('about');
 Route::get('/cart',[CartController::class, 'index'])->name('cart');
 Route::get('/checkout',[CheckoutController::class, 'index'])->name('checkout')->middleware('auth');
 Route::get('/compare',[CompareController::class, 'index'])->name('compare');
+Route::get('/addCompare/{id}',[CompareController::class, 'add'])->name('addCompare');
+Route::get('/removeCompare/{id}',[CompareController::class, 'delete'])->name('removeCompare');
 Route::get('/account',[MyAccountController::class, 'index'])->name('account');
 Route::get('/wishlist',[WishListController::class, 'index'])->name('wishlist')->middleware('auth');
 Route::get('/addWishlist/{id}',[WishListController::class, 'add'])->name('addWishlist')->middleware('auth');

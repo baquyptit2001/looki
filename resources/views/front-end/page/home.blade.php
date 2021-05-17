@@ -346,9 +346,14 @@
                                               <li>
                                                   <a
                                                       class="action"
-                                                      href="#"
-                                                      data-toggle="modal"
-                                                      data-target="#compare"
+
+                                                      @if ($compare->check($item->id))
+                                                        href="#"
+                                                        data-toggle="modal"
+                                                        data-target="#compare"
+                                                      @else
+                                                        href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                      @endif
                                                   >
                                 <span
                                     data-toggle="tooltip"
@@ -468,9 +473,13 @@
                                                   <li>
                                                       <a
                                                           class="action"
-                                                          href="#"
-                                                          data-toggle="modal"
-                                                          data-target="#compare"
+                                                          @if ($compare->check($item->id))
+                                                            href="#"
+                                                            data-toggle="modal"
+                                                            data-target="#compare"
+                                                          @else
+                                                            href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                          @endif
                                                       >
                                 <span
                                     data-toggle="tooltip"
@@ -587,9 +596,13 @@
                                                       <li>
                                                           <a
                                                               class="action"
-                                                              href="#"
-                                                              data-toggle="modal"
-                                                              data-target="#compare"
+                                                              @if ($compare->check($item->id))
+                                                                href="#"
+                                                                data-toggle="modal"
+                                                                data-target="#compare"
+                                                              @else
+                                                                href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                              @endif
                                                           >
                                 <span
                                     data-toggle="tooltip"
@@ -759,9 +772,13 @@
                                           <li>
                                               <a
                                                   class="action"
-                                                  href="#"
-                                                  data-toggle="modal"
-                                                  data-target="#compare"
+                                                  @if ($compare->check($item->id))
+                                                    href="#"
+                                                    data-toggle="modal"
+                                                    data-target="#compare"
+                                                  @else
+                                                    href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                                  @endif
                                               >
                                 <span
                                     data-toggle="tooltip"
