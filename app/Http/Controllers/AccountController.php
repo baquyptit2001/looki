@@ -184,7 +184,7 @@ class AccountController extends Controller
 
     public function logOut(Request $request){
         Auth::logout();
-        $request->session()->flush();
+        // $request->session()->flush();
         return redirect()->route('login');
     }
 
