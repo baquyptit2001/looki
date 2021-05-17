@@ -244,8 +244,8 @@
                                         @if (count($rate)!=0)
                                             @foreach ($rate as $item)
                                                 <div class="single-review">
-                                                    <div class="review-img">
-                                                        <img src="assets/img/testimonial-image/1.png" alt="" />
+                                                    <div class="review-img">   
+                                                        <img src="{{ asset(($item->user->avatar==null) ? 'uploads/avatar/default-avatar.jpg':'uploads/avatar/'.$item->user->avatar )}}" width="50px" style="border-radius: 50%" alt="" />
                                                     </div>
                                                     <div class="review-content w-100">
                                                         <div class="review-top-wrap">
