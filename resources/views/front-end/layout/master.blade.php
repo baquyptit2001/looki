@@ -798,27 +798,30 @@
                     </ul>
                   </div>
                   <div class="product-footer">
-                    <div
-                      class="product-count style d-flex flex-column flex-sm-row my-4"
-                    >
-                      <div class="count d-flex">
-                        <input type="number" min="1" max="10" step="1" value="1" />
-                        <div class="button-group">
-                          <button class="count-btn increment">
-                            <i class="fas fa-chevron-up"></i>
-                          </button>
-                          <button class="count-btn decrement">
-                            <i class="fas fa-chevron-down"></i>
-                          </button>
+                    <form action="{{ route('add-cart',['id' => $item->id]) }}" method="GET">
+                    @csrf
+                      <div
+                        class="product-count style d-flex flex-column flex-sm-row my-4"
+                        >
+                        <div class="count d-flex">
+                          <input type="number" name="quantity" min="1" max="100" step="1" value="1" />
+                          <div class="button-group">
+                            <button class="count-btn increment">
+                              <i class="fas fa-chevron-up"></i>
+                            </button>
+                            <button class="count-btn decrement">
+                              <i class="fas fa-chevron-down"></i>
+                            </button>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="btn btn-dark btn--xl mt-5 mt-sm-0">
+                            <a href="{{ route('add-cart', ['id'=>$item->id]) }}" class="mr-2"><i class="ion-android-add"></i></span>
+                            Add to cart
+                          </a>
                         </div>
                       </div>
-                      <div>
-                        <button class="btn btn-dark btn--xl mt-5 mt-sm-0">
-                          <a href="{{ route('add-cart', ['id'=>$item->id]) }}" class="mr-2"><i class="ion-android-add"></i></span>
-                          Add to cart
-                        </a>
-                      </div>
-                    </div>
+                    </form>
                     <div class="addto-whish-list">
                       @if ($item->check())
                                 <a href="{{ route('removeSwitchWishlist', ['id'=>$item->id]) }}"><i class="icon-heart heart-red"></i> Remove from wishlist</a>
