@@ -147,12 +147,12 @@
                                 @else
                                 <a href="{{ route('addWishlist', ['id'=>$pro->id]) }}"><i class="icon-heart"></i> Add to wishlist</a>
                                 @endif
-                                <a @if ($compare->check($item->id))
+                                <a @if ($compare->check($pro->id))
                                     href="#"
                                     data-toggle="modal"
                                     data-target="#compare"
                                   @else
-                                    href="{{ route('addCompare', ['id'=>$item->id]) }}"
+                                    href="{{ route('addCompare', ['id'=>$pro->id]) }}"
                                   @endif><i class="icon-shuffle"></i> Add to compare</a>
                             </div>
                             <div class="pro-social-links mt-10">
@@ -382,7 +382,7 @@
                                                     </li>
                                                     <li>
                                                         <a class="action" href="#" data-toggle="modal"
-                                                            data-target="#quick-view">
+                                                            data-target="#quick-view{{ $item->id }}">
                                                             <span data-toggle="tooltip" data-placement="bottom"
                                                                 title="Quick view" class="icon-magnifier"></span>
                                                         </a>

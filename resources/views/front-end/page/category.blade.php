@@ -118,7 +118,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a class="action" href="#" data-toggle="modal" data-target="#quick-view">
+                                                    <a class="action" href="#" data-toggle="modal" data-target="#quick-view{{ $item->id }}">
                                                         <span data-toggle="tooltip" data-placement="bottom" title=""
                                                             class="icon-magnifier" data-original-title="Quick view"></span>
                                                     </a>
@@ -211,7 +211,7 @@
                                                     </li>
                                                     <li>
                                                         <a class="action" href="#" data-toggle="modal"
-                                                            data-target="#quick-view">
+                                                            data-target="#quick-view{{ $item->id }}">
                                                             <span data-toggle="tooltip" data-placement="bottom" title=""
                                                                 class="icon-magnifier" data-original-title="Quick view"></span>
                                                         </a>

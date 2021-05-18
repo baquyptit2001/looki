@@ -368,7 +368,7 @@
                                                       class="action"
                                                       href="#"
                                                       data-toggle="modal"
-                                                      data-target="#quick-view"
+                                                      data-target="#quick-view{{ $item->id }}"
                                                   >
                                 <span
                                     data-toggle="tooltip"
@@ -494,7 +494,7 @@
                                                           class="action"
                                                           href="#"
                                                           data-toggle="modal"
-                                                          data-target="#quick-view"
+                                                          data-target="#quick-view{{ $item->id }}"
                                                       >
                                 <span
                                     data-toggle="tooltip"
@@ -617,7 +617,7 @@
                                                               class="action"
                                                               href="#"
                                                               data-toggle="modal"
-                                                              data-target="#quick-view"
+                                                              data-target="#quick-view{{ $item->id }}"
                                                           >
                                 <span
                                     data-toggle="tooltip"
@@ -793,7 +793,7 @@
                                                   class="action"
                                                   href="#"
                                                   data-toggle="modal"
-                                                  data-target="#quick-view"
+                                                  data-target="#quick-view{{ $item->id }}"
                                               >
                                 <span
                                     data-toggle="tooltip"

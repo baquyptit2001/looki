@@ -23,9 +23,9 @@ class Product extends Model
         return $this->belongsTo('App\Models\Brand', 'brand_id', 'id');
     }
 
-    // public function size(){
-    //     return $this->hasMany('App\Models\productSize', 'product_id', 'id');
-    // }
+    public function img(){
+        return $this->hasMany('App\Models\imgProduct', 'product_id', 'id');
+    }
 
     public function check(){
         if(Auth::check()){
