@@ -88,7 +88,30 @@
 </head>
 
 <body>
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v10.0'
+    });
+  };
 
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your Chat Plugin code -->
+<div class="fb-customerchat"
+  attribution="biz_inbox"
+  page_id="103535875262851">
+</div>
 
 <!-- offcanvas-overlay start -->
 <div class="offcanvas-overlay"></div>
@@ -985,7 +1008,55 @@
       {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
 
       <!-- Use the minified version files listed below for better performance and remove the files listed above -->
+        {{-- <script type="text/javascript">
+        $(document).ready(function(){
 
+          $("#first-thumbb").trigger('click');
+
+        });
+          $(document).ready(function(){
+
+            $('.pro-btn').click(function (event){
+                  event.preventDefault();
+                  $.ajax({
+                      url: $(this).attr('href')
+                      ,success: function(response) {
+                        // alert(response);
+                      }
+                  });
+                  return false; //for good measure
+              });
+
+          });
+          $(document).ready(function() {
+        $.ajaxSetup({
+        headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+        });
+
+        $('.pro-btn').click( function() {
+            var product_id = $(this).data('id');
+            var url = "/ajaxadd";
+
+
+
+            $.ajax({
+
+            type: "POST",
+            url: url,
+            data: { product_id: product_id },
+            success: function (data) {
+            console.log(data);
+
+            },
+            error: function (data) {
+            console.log('Error:', data);
+            }
+            });
+        });
+    });
+      </script> --}}
       <!--***************************
             Minified  js
        ***************************-->

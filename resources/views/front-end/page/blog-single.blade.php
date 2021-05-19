@@ -363,36 +363,16 @@
           </div>
           <div class="theme1">
             <ul id="offcanvas-menu2" class="blog-ctry-menu">
-              <li>
-                <a href="javascript:void(0)">Shoes</a>
-                <ul class="category-sub-menu">
-                  <li><a href="#">Women Shoes</a></li>
-                  <li><a href="#">Men Shoes</a></li>
-                  <li><a href="#">Boots</a></li>
-                  <li><a href="#">Casual Shoes</a></li>
-                  <li><a href="#">Flip Flops</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Luggage &amp; Bags</a>
-                <ul class="category-sub-menu">
-                  <li><a href="#">Stylish Backpacks</a></li>
-                  <li><a href="#">Shoulder Bags</a></li>
-                  <li><a href="#">Crossbody Bags</a></li>
-                  <li><a href="#">Briefcases</a></li>
-                  <li><a href="#">Luggage &amp; Travel</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="javascript:void(0)">Accessories</a>
-                <ul class="category-sub-menu">
-                  <li><a href="#">Cosmetic Bags &amp; Cases</a></li>
-                  <li><a href="#">Wallets &amp; Card Holders</a></li>
-                  <li><a href="#">Luggage Covers</a></li>
-                  <li><a href="#">Passport Covers</a></li>
-                  <li><a href="#">Bag Parts &amp; Accessories</a></li>
-                </ul>
-              </li>
+              @foreach ($cat as $item)
+                  <li>
+                      <a href="javascript:void(0)">{{ $item->name }}</a>
+                      <ul class="category-sub-menu">
+                          @foreach ($item->child as $child)
+                              <li><a href="{{ route('category', ['id'=>$child->id]) }}">{{ $child->name }}</a></li>
+                          @endforeach
+                      </ul>
+                  </li>
+              @endforeach
             </ul>
           </div>
           <div class="sidebar-widget mt-30 mb-30">

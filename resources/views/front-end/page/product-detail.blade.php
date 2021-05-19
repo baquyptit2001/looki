@@ -1,9 +1,6 @@
 @extends('front-end.layout.master')
 @section('title', $pro->name)
 @section('main')
-<script>
-    document.getElementById("clickkk").click();
-</script>
 <!-- breadcrumb-section start -->
 <nav class="breadcrumb-section theme1 bg-lighten2 pt-110 pb-110">
     <div class="container">
@@ -37,9 +34,9 @@
                         <span class="badge badge-danger top-right">New</span>
                     </div>
                     <div class="product-sync-init mb-20">
-                        <div class="single-product" id="clickkk">
+                        <div class="single-product">
                             <div class="product-thumb">
-                                <img src="{{asset('uploads/product/'.$pro->image)}}" alt="product-thumb" />
+                                <img src="{{asset('uploads/product/'.$pro->image)}}" alt="product-thumb"/>
                             </div>
                         </div>
                         <!-- single-product end -->
@@ -57,7 +54,7 @@
                     <div class="single-product">
                         <div class="product-thumb">
                             <a href="javascript:void(0)">
-                                <img src="{{asset('uploads/product/'.$pro->image)}}" alt="product-thumb" /></a>
+                                <img src="{{asset('uploads/product/'.$pro->image)}}" alt="product-thumb" id="first-thumbb" onclick="myFunction()"/></a>
                         </div>
                     </div>
                     <!-- single-product end -->
