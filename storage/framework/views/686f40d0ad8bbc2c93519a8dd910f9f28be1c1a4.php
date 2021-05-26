@@ -1,0 +1,82 @@
+
+
+<?php $__env->startSection('title','Chỉnh sửa thương hiệu'); ?>
+
+<?php $__env->startSection('main'); ?>
+    
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <?php echo csrf_field(); ?>
+                    <div class="form-body">
+                        <h3 class="card-title">Thêm thương hiệu</h3>
+                        <hr>
+                        <div class="row p-t-20">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="control-label">Tên thương hiệu</label>
+                                    <input type="text" name="name" id="name" class="form-control" value="<?php echo e($brand->name); ?>" placeholder="Tên danh mục">
+                                    <small class="form-control-feedback">Nhập tên thương hiệu sản phẩm</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <div class="row p-t-20">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="control-label">Ảnh thương hiệu</label>
+                                    <input type="file" name="upload" id="image" class="form-control" onchange="loadFile(event)" placeholder="Ảnh thương hiệu">
+                                    <small class="form-control-feedback">Ảnh thương hiệu</small>
+                                    <br>
+                                    <img src="<?php echo e(asset('uploads/brand/'.$brand->image)); ?>" alt="product_image" id="show" width="150px" >
+                                    <script>
+                                        var loadFile = function(event) {
+                                            var image = document.getElementById('show');
+                                            image.src = URL.createObjectURL(event.target.files[0]);
+                                        };
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/row-->
+                        <div class="row">
+                            <!--/span-->
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="control-label">Trạng thái</label>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="statuss" name="status" value="1" class="custom-control-input" <?php echo e(($brand->status==1)?'checked':''); ?>>
+                                        <label class="custom-control-label" for="statuss">Hiện</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="status" name="status" value="0" class="custom-control-input" <?php echo e(($brand->status==0)?'checked':''); ?>>
+                                        <label class="custom-control-label" for="status">Ẩn</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/span-->
+                        </div>
+                        <!--/row-->
+                        
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i>Thay đổi</button>
+                        <a href="<?php echo e(route('listBrand')); ?>" class="btn btn-danger">Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ADMIN\Desktop\bkap\looki\resources\views/admin/page/brand/edit.blade.php ENDPATH**/ ?>
