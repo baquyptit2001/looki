@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Wishlist;
+use App\Models\ProductSize;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -26,7 +27,7 @@ class Product extends Model
     }
 
     public function size(){
-        return $this->hasMany('App\Models\ProductSize', 'product_id', 'id')->orderBy('size', 'asc');
+        return $this->hasMany(ProductSize::class, 'product_id', 'id')->orderBy('size', 'asc');
     }
 
     public function check(){
