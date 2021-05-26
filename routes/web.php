@@ -50,6 +50,11 @@ Route::group(['prefix'=>'backend', 'middleware'=>'role'],function(){
     Route::get('/deleteImg/{id}', [ProductController::class, 'deleteImg'])->name('deleteImg');
     Route::get('/editProduct/{id}', [ProductController::class, 'edit'])->name('editProduct');
     Route::post('/editProduct/{id}', [ProductController::class, 'update'])->name('editProduct');
+    Route::get('/editSize/{id}', [ProductController::class, 'editSize'])->name('editSize');
+    Route::post('/editSize/{id}', [ProductController::class, 'updateSize'])->name('updateSize');
+    Route::get('/deleteSize/{id}', [ProductController::class, 'deleteSize'])->name('deleteSize');
+    Route::get('/listSize/{id}', [ProductController::class, 'listSize'])->name('listSize');
+    Route::post('/listSize/{id}', [ProductController::class, 'addSize'])->name('addSize');
     Route::post('/upload', [ProductController::class, 'upload'])->name('upload');
     Route::get('/account',[AccountController::class,'index'])->name('listAccount');
     Route::get('/banAccount/{id}', [AccountController::class, 'ban'])->name('banAccount');

@@ -247,9 +247,6 @@
             <a href="{{ route('product', ['id'=>$item->product_id]) }}" class="title"
               >{{ $item->product->name }}</a
             >
-            <span class="quantity-price"
-              ><span class="amount">${{ ($item->product->sale_price==0) ? $item->product->price : $item->product->sale_price}}</span></span
-            >
             <a href="{{ route('removeWishlist', ['id'=>$item->id]) }}" class="remove">×</a>
           </div>
         </li>
@@ -285,7 +282,7 @@
                     >{{ $item['name'] }}</a
                   >
                   <span class="quantity-price"
-                    >{{$item['quantity']}} x <span class="amount">{{$item['price']}} $</span></span
+                    >{{$item['size'].' x '.$item['quantity']}} x <span class="amount">{{$item['price']}} $</span></span
                   >
                   <a href="{{route('delete-cart', $item['id'])}}" class="remove">×</a>
                 </div>
@@ -726,7 +723,7 @@
   <!-- first modal -->
   @foreach ($modalProduct as $item)
     <div
-      class="modal fade theme1 style1"
+      class="modal fade theme1 style1 quick-modal"
       id="quick-view{{ $item->id }}"
       tabindex="-1"
       role="dialog"
@@ -809,20 +806,28 @@
                       </span>
                     </div>
                   </div>
+                  <form action="{{ route('add-cart',['id' => $item->id]) }}" method="GET">
+                  @csrf
                   <div class="product-body">
                     <span class="product-price text-center">
-                      <span class="new-price">${{ ($item->sale_price==0) ? $item->price : $item->sale_price }}</span>
+                      <span class="new-price quick-view-price"></span>
                     </span>
                     <p>
                       {{ $item->description }}
                     </p>
-                    <ul>
-                      <li>Size: {{ $item->size }}</li>
-                    </ul>
+                    <div class="d-flex mt-30">
+                      <div class="product-size">
+                        <h3 class="title">Size</h3>
+                        <select name="product_size" class="price-option">
+                          @foreach ($item->size as $sz)
+                            <option value="{{ $sz->id }}" price="{{ ($sz->sale_price==0) ? $sz->price : $sz->sale_price }}">{{ $sz->size }}</option>  
+                          @endforeach
+                        </select>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="product-footer">
-                    <form action="{{ route('add-cart',['id' => $item->id]) }}" method="GET">
-                    @csrf
                       <div
                         class="product-count style d-flex flex-column flex-sm-row my-4"
                         >
@@ -844,7 +849,6 @@
                           </a>
                         </div>
                       </div>
-                    </form>
                     <div class="addto-whish-list">
                       @if ($item->check())
                                 <a href="{{ route('removeSwitchWishlist', ['id'=>$item->id]) }}"><i class="icon-heart heart-red"></i> Remove from wishlist</a>
@@ -877,6 +881,7 @@
                       </ul>
                     </div>
                   </div>
+                </form>
                 </div>
               </div>
             </div>
@@ -1008,55 +1013,27 @@
       {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> --}}
 
       <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-        {{-- <script type="text/javascript">
+        <script type="text/javascript">
         $(document).ready(function(){
-
-          $("#first-thumbb").trigger('click');
-
-        });
-          $(document).ready(function(){
-
-            $('.pro-btn').click(function (event){
-                  event.preventDefault();
-                  $.ajax({
-                      url: $(this).attr('href')
-                      ,success: function(response) {
-                        // alert(response);
-                      }
-                  });
-                  return false; //for good measure
-              });
-
+          $('.quick-modal').on('shown.bs.modal', function(){
+            var price = $(this).find('.price-option').find('option:selected').attr('price');
+            var parent = $(this);
+            $(this).find('.quick-view-price').text('$ '+price);
+            $(this).find('.price-option').change(function(){
+              price = $(this).find('option:selected').attr('price');
+              console.log(price);
+              parent.find('.quick-view-price').text('$ '+price);
+            })
           });
-          $(document).ready(function() {
-        $.ajaxSetup({
-        headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
+          var price = $('#pro-detail').find('option:selected').attr('price');
+          var parent = $('#pro-detail');
+          $('#pro-detail').find('.product-price').text(price+' $');
+          $('#pro-detail').find('.price-option').change(function(){
+            price = $(this).find('option:selected').attr('price');
+            parent.find('.product-price').text(price+' $');
+          });
         });
-
-        $('.pro-btn').click( function() {
-            var product_id = $(this).data('id');
-            var url = "/ajaxadd";
-
-
-
-            $.ajax({
-
-            type: "POST",
-            url: url,
-            data: { product_id: product_id },
-            success: function (data) {
-            console.log(data);
-
-            },
-            error: function (data) {
-            console.log('Error:', data);
-            }
-            });
-        });
-    });
-      </script> --}}
+      </script>
       <!--***************************
             Minified  js
        ***************************-->

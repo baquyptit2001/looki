@@ -29,8 +29,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label class="control-label">Tên sản phẩm</label>
-                                    <input type="text" name="product_id" id="name" class="form-control" placeholder="{{ $product->name }}" disabled>
-                                    <input type="hidden" name="product_id" id="name" class="form-control" value="{{ $product->id }}" placeholder="{{ $product->name }}" disabled>
+                                    <input type="text" id="name" class="form-control" placeholder="{{ $size->product->name }}" disabled>
                                     <small class="form-control-feedback">Nhập tên sản phẩm sản phẩm</small> </div>
                             </div>
                         </div>
@@ -38,7 +37,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label class="control-label">Giá sản phẩm</label>
-                                    <input type="text" name="sale_price" id="price" class="form-control" placeholder="Gia khuyen mai">
+                                    <input type="text" name="price" id="price" class="form-control" value="{{ $size->price }}" placeholder="Gia khuyen mai">
                                     <small class="form-control-feedback">Nhập giá sản phẩm</small> </div>
                             </div>
                         </div>
@@ -46,7 +45,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label class="control-label">Giá khuyến mãi sản phẩm</label>
-                                    <input type="text" name="sale_price" id="sale_price" class="form-control" placeholder="Gia khuyen mai">
+                                    <input type="text" name="sale_price" id="sale_price" value="{{ $size->sale_price }}" class="form-control" placeholder="Gia khuyen mai">
                                     <small class="form-control-feedback">Nhập tên sản phẩm sản phẩm</small> </div>
                             </div>
                         </div>
@@ -54,7 +53,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label class="control-label">Size sản phẩm</label>
-                                    <input type="text" name="size" id="size" class="form-control" placeholder="Size sản phẩm">
+                                    <input type="text" name="size" id="size" value="{{ $size->size }}" class="form-control" placeholder="Size sản phẩm">
                                     <small class="form-control-feedback">Nhập size sản phẩm</small> </div>
                             </div>
                         </div>
@@ -64,7 +63,7 @@
                     </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Thêm mới</button>
-                        <a href="{{route('listCategory')}}" class="btn btn-danger">Hủy</a>
+                        <a href="{{route('listProduct')}}" class="btn btn-danger">Hủy</a>
                     </div>
                 </form>
             </div>

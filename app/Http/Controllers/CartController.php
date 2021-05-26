@@ -7,6 +7,7 @@ use App\Jobs\SendEmail;
 use App\Models\Product;
 use App\Helper\CartHelper;
 use App\Models\orderDetail;
+use App\Models\ProductSize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,13 +16,9 @@ class CartController extends Controller
 {
 
     public function add(CartHelper $cart, $id, Request $req){
-        // dd($req);
         $product = Product::find($id);
-        if($req==null){
-            $cart->add($product);
-        }else{
-            $cart->add($product, $req->quantity);
-        }
+        $size = ProductSize::find($req->product_size);
+        $cart->add($product, $size->id, $req->quantity);
         return redirect()->back();
     }
     public function cartCheckout(Request $req, CartHelper $cart)
@@ -51,9 +48,10 @@ class CartController extends Controller
         foreach($cart->items as $item){
             $detail[$i++] = orderDetail::create([
                 'order_id'=>$order->id,
-                'product_id'=>$item['id'],
+                'product_id'=>$item['product_id'],
                 'quantity'=>$item['quantity'],
-                'price'=>$item['price']
+                'price'=>$item['price'],
+                'size_id'=>$item['id']
             ]);
         }
         $cart->clear();

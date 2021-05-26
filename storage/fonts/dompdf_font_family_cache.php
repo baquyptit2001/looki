@@ -78,6 +78,6 @@
     'normal' => $rootDir . '/lib/fonts/DejaVuSerif',
   ),
   'open sans' => array(
-    'normal' => $fontDir . '/open_sans_normal_e506610fef0257e1844aa011b3f4e88e',
+    'normal' => $fontDir . '/open_sans_normal_90efcce23046f4cf42180c9b9a0b3885',
   ),
 ) ?>

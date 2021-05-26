@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class productSize extends Model
+class ProductSize extends Model
 {
-    public $fillable = ['product_id', 'size', 'price','sale_price'];
+    public $fillable = ['size', 'product_id', 'price', 'sale_price'];
+
+    public function product(){
+        return $this->belongsTo('App\Models\Product', 'product_id', 'id');
+    }
     use HasFactory;
 }

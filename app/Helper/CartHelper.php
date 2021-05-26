@@ -1,6 +1,7 @@
 <?php
 namespace App\Helper;
 use Session;
+use App\Models\ProductSize;
 
 class CartHelper {
     public $items = [];
@@ -11,20 +12,23 @@ class CartHelper {
 //        $this->total_quantity = $this->total_qty();
     }
 
-    public function add($product, $quantity=1){
+    public function add($product, $size, $quantity=1){
         if($quantity==null)
             $quantity=1;
+        $szItem = ProductSize::find($size);
         $item = [
-          'id'=>$product->id,
+          'id'=>$size,
           'name'=>$product->name,
           'image'=>$product->image,
-          'price'=>$product->sale_price>0 ? $product->sale_price : $product->price,
-          'quantity'=>$quantity
+          'price'=>$szItem->sale_price>0 ? $szItem->sale_price : $szItem->price,
+          'quantity'=>$quantity,
+          'size'=>$szItem->size,
+          'product_id'=>$product->id
         ];
-        if(isset($this->items[$product->id])){
-            $this->items[$product->id]['quantity'] += $quantity;
+        if(isset($this->items[$size])){
+            $this->items[$size]['quantity'] += $quantity;
         }else{
-            $this->items[$product->id] = $item;
+            $this->items[$size] = $item;
         }
         session(['cart'=>$this->items]);
     }

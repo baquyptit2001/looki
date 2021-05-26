@@ -18,14 +18,12 @@ class CreateProductsTable extends Migration
             $table->string('name', 100);
             $table->string('image', 255);
             $table->string('description', 1000);
-            $table->float('price');
-            $table->float('sale_price')->default(0);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             $table->unsignedBigInteger('brand_id');
-            $table->string('size', 100);
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->tinyInteger('is_recommend')->default(1);
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

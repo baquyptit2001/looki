@@ -42,7 +42,7 @@
                         <span class="sub-title d-block"
                           ><a href="{{ route('product', ['id'=>$item['id']]) }}" >{{ $item['name'] }}</a></span
                         >
-                        <a href="{{ route('add-cart', ['id'=>$item['id']]) }}" class="btn btn-dark btn--lg">
+                        <a href="{{ route('product', ['id'=>$item['id']]) }}" class="action btn btn-dark btn--lg">
                           add to cart</a
                         >
                       </th>
@@ -69,7 +69,12 @@
                   <tr>
                     <th scope="row">Size</th>
                     @foreach ($compare->items as $item)
-                      <td class="text-center">{{ $item['size'] }}</td>  
+                    <td class="text-center">
+                    @foreach ($item['size'] as $sz)
+                    {{ $sz['size'] }}
+                    @endforeach
+                  </td>  
+                      {{-- <td class="text-center">{{ $item['size'] }}</td>   --}}
                     @endforeach
                   </tr>
                   <tr>

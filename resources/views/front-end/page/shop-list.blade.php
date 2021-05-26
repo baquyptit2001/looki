@@ -192,19 +192,14 @@
                                                     <div
                                                         class="d-flex align-items-center justify-content-between"
                                                     >
-                                                        @if($item->sale_price==0)
-                                                            <span class="product-price">{{$item->price}}$</span>
-                                                        @else
-                                                            <span class="product-price">
-                                                                <span><del>{{$item->price}}$</del></span>
-                                                                <span class="onsale">{{$item->sale_price}}$</span>
-                                                            </span>
-                                                        @endif
+                                                    <span class="product-price">{{$item->minPrice()}} $</span>
 
                                                         <div class="d-flex justify-content-end w-50">
                                                             <a
-                                                                class="pro-btn"
-                                                                href="{{route('add-cart', $item->id)}}"
+                                                            class="pro-btn action"
+                                                            href="#"
+                                                            data-toggle="modal"
+                                                            data-target="#quick-view{{ $item->id }}"
                                                             >
                                                                 <i class="icon-basket"></i>
                                                             </a>
@@ -326,14 +321,7 @@
                                                                 <span class="ion-ios-star"></span>
                                                                 <span class="ion-ios-star de-selected"></span>
                                                             </div>
-                                                            @if($item->sale_price==0)
-                                                                <span class="product-price">{{$item->price}}$</span>
-                                                            @else
-                                                                <span class="product-price">
-                                                                <span><del>{{$item->price}}$</del></span>
-                                                                <span class="onsale">{{$item->sale_price}}$</span>
-                                                            </span>
-                                                            @endif
+                                                            <span class="product-price">{{$item->minPrice()}} $</span>
                                                         </div>
                                                         <ul class="product-list-des">
                                                             <li>
@@ -354,8 +342,10 @@
                                                             <p>Availability: <span>1200 In Stock</span></p>
                                                         </div>
                                                         <a
-                                                            class="btn btn-dark btn--xl"
-                                                            href="{{route('add-cart', $item->id)}}"
+                                                        class="btn btn-dark btn--xl action"
+                                                        href="#"
+                                                        data-toggle="modal"
+                                                        data-target="#quick-view{{ $item->id }}"
                                                         >
                                                             Add to cart
                                                         </a>

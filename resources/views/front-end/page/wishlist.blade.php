@@ -53,7 +53,7 @@
                       >
                     </td>
                     <td class="text-center">
-                      <span class="whish-list-price"> ${{ ($item->product->sale_price==0) ? $item->product->price : $item->product->sale_price}} </span>
+                      <span class="whish-list-price"> ${{ $item->product->minPrice() }} </span>
                     </td>
 
                     <td class="text-center">
@@ -62,7 +62,8 @@
                       ></a>
                     </td>
                     <td class="text-center">
-                      <a href="{{ route('add-cart', ['id'=>$item->product_id]) }}" class="btn btn-dark btn--lg">add to cart</a>
+                      <a class="btn btn-dark btn--xl action"
+                      href="{{ route('product', ['id'=>$item->product->id]) }}">add to cart</a>
                     </td>
                   </tr>
                 @endforeach

@@ -38,7 +38,7 @@
                 <tr>
                   <th class="text-center" scope="col">Product Image</th>
                   <th class="text-center" scope="col">Product Name</th>
-                  <th class="text-center" scope="col">Stock Status</th>
+                  <th class="text-center" scope="col">Size</th>
                   <th class="text-center" scope="col">Qty</th>
                   <th class="text-center" scope="col">Price</th>
                   <th class="text-center" scope="col">action</th>
@@ -57,9 +57,7 @@
                         >
                       </td>
                       <td class="text-center">
-                        <span class="badge badge-danger position-static"
-                          >In Stock</span
-                        >
+                        <p>{{ $item['size'] }}</p>
                       </td>
                       <td class="text-center">
                         <div class="product-count style">

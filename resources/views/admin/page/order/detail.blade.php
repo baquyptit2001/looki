@@ -22,6 +22,7 @@
                                         <th>#</th>
                                         <th>Mã đơn hàng</th>
                                         <th>Tên sản phẩm</th>
+                                        <th>Size</th>
                                         <th>Đơn giá</th>
                                         <th>Số lượng</th>
                                         <th>Thành tiền</th>
@@ -34,6 +35,7 @@
                                         <td><?php echo $i;$i++;$p+=($item->price * $item->quantity);$q+=$item->quantity ?></td>
                                         <td>{{$item->order_id}}</td>
                                         <td>{{$item->product->name}}</td>
+                                        <td>{{$item->size->size}}</td>
                                         <td>{{$item->price}}</td>
                                         <td>{{$item->quantity}}</td>
                                         <td>{{$item->price * $item->quantity}}</td>

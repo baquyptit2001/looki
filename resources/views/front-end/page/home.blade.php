@@ -308,7 +308,9 @@
                               <div class="card-body p-0">
                                   <div class="media flex-column">
                                       <div class="product-thumbnail position-relative">
-                                          <span class="badge badge-danger top-right">New</span>
+                                        @if ($item->isSale())
+                                          <span class="badge badge-danger top-right">Sale</span>  
+                                        @endif
                                           <a href="{{route('product', ['id'=>$item->id])}}">
                                               <img
                                                   class="first-img"
@@ -396,15 +398,12 @@
                                               <div
                                                   class="d-flex align-items-center justify-content-between"
                                               >
-                                                  @if($item->sale_price==0)
-                                                      <span class="product-price">{{$item->price}} $</span>
-                                                  @else
-                                                      <span class="product-price">{{$item->sale_price}} $</span>
-                                                      <span><del>{{$item->price}} $</del></span>
-                                                  @endif
+                                                  <span class="product-price">{{$item->minPrice()}} $</span>
                                                   <div class="d-flex justify-content-end w-50">
-                                                      <a href="{{route('add-cart', $item->id)}}"
-                                                          class="pro-btn"
+                                                      <a class="pro-btn action"
+                                                      href="#"
+                                                      data-toggle="modal"
+                                                      data-target="#quick-view{{ $item->id }}"
                                                          >
                                                           <i class="icon-basket"></i>
                                                       </a>
@@ -430,13 +429,13 @@
             >
               <div class="product-slider-init theme1 slick-nav">
                   @foreach($product as $item)
-                     @if($item->sale_price!=0)
+                     @if($item->isSale())
                           <div class="slider-item">
                               <div class="card product-card">
                                   <div class="card-body p-0">
                                       <div class="media flex-column">
                                           <div class="product-thumbnail position-relative">
-                                              <span class="badge badge-danger top-right">New</span>
+                                              <span class="badge badge-danger top-right">Sale</span>
                                               <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                   <img
                                                       class="first-img"
@@ -522,13 +521,14 @@
                                                   <div
                                                       class="d-flex align-items-center justify-content-between"
                                                   >
-                                                      <span class="product-price">{{$item->sale_price}} $</span>
-                                                      <span><del>{{$item->price}} $</del></span>
+                                                      <span><del>{{$item->minPrice()}} $</del></span>
 
                                                       <div class="d-flex justify-content-end w-50">
                                                           <a
-                                                              class="pro-btn"
-                                                              href="{{route('add-cart', $item->id)}}"
+                                                          class="pro-btn action"
+                                                          href="#"
+                                                          data-toggle="modal"
+                                                          data-target="#quick-view{{ $item->id }}"
                                                           >
                                                               <i class="icon-basket"></i>
                                                         </a>
@@ -559,7 +559,9 @@
                                       <div class="card-body p-0">
                                           <div class="media flex-column">
                                               <div class="product-thumbnail position-relative">
-                                                  <span class="badge badge-danger top-right">New</span>
+                                                  @if ($item->isSale())
+                                                    <span class="badge badge-danger top-right">Sale</span>  
+                                                  @endif
                                                   <a href="{{ route('product', ['id'=>$item->id]) }}">
                                                       <img
                                                           class="first-img"
@@ -645,17 +647,14 @@
                                                       <div
                                                           class="d-flex align-items-center justify-content-between"
                                                       >
-                                                          @if($item->sale_price==0)
-                                                              <span class="product-price">{{$item->price}} $</span>
-                                                          @else
-                                                              <span class="product-price">{{$item->sale_price}} $</span>
-                                                              <span><del>{{$item->price}} $</del></span>
-                                                          @endif
+                                                          <span class="product-price">{{$item->minPrice()}} $</span>
 
                                                           <div class="d-flex justify-content-end w-50">
                                                               <a
-                                                                  class="pro-btn"
-                                                                  href="{{route('add-cart', $item->id)}}"
+                                                              class="pro-btn action"
+                                                              href="#"
+                                                              data-toggle="modal"
+                                                              data-target="#quick-view{{ $item->id }}"
                                                               >
                                                                   <i class="icon-basket"></i>
                                                               </a>
@@ -735,7 +734,9 @@
                           <div class="card-body p-0">
                               <div class="media flex-column">
                                   <div class="product-thumbnail position-relative">
-                                      <span class="badge badge-danger top-right">New</span>
+                                      @if ($item->isSale())
+                                        <span class="badge badge-danger top-right">Sale</span>
+                                      @endif
                                       <a href="{{ route('product', ['id'=>$item->id]) }}">
                                           <img
                                               class="first-img"
@@ -821,16 +822,13 @@
                                           <div
                                               class="d-flex align-items-center justify-content-between"
                                           >
-                                              @if($item->sale_price==0)
-                                                  <span class="product-price">{{$item->price}} $</span>
-                                              @else
-                                                  <span class="product-price">{{$item->sale_price}} $</span>
-                                                  <span><del>{{$item->price}} $</del></span>
-                                              @endif
+                                              <span class="product-price">{{$item->minPrice()}} $</span>
                                               <div class="d-flex justify-content-end w-50">
                                                   <a
-                                                      class="pro-btn"
-                                                      href="{{route('add-cart', $item->id)}}"
+                                                      class="pro-btn action"
+                                                      href="#"
+                                                      data-toggle="modal"
+                                                      data-target="#quick-view{{ $item->id }}"
                                                   >
                                                       <i class="icon-basket"></i>
                                                   </a>

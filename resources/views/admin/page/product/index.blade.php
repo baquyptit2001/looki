@@ -22,8 +22,6 @@
                                         <th>STT</th>
                                         <th>Ảnh</th>
                                         <th>Tên sản phẩm</th>
-                                        <th>Giá gốc</th>
-                                        <th>Giá km</th>
                                         <th>Danh Mục</th>
                                         <th>Thương hiệu</th>
                                         <th>Size</th>
@@ -40,11 +38,14 @@
                                                 </div>
                                             </td>
                                             <td>{{$item->name}}</td>
-                                            <td>{{$item->price}}</td>
-                                            <td>{{$item->sale_price}}</td>
                                             <td>{{$item->category->name}}</td>
                                             <td>{{$item->brand->name}}</td>
-                                            <td>{{ $item->size }}</td>
+                                            <td>@foreach ($item->size as $sz)
+                                                {{ $sz->size.' ' }}
+                                            @endforeach
+                                            <br>
+                                            <a href="{{ route('listSize', ['id'=>$item->id]) }}">Chi Tiết</a>
+                                            </td>
                                             <td>
                                                 <span class="label label-danger"><a href="{{ route('deleteProduct', ['id'=>$item->id]) }}" onclick="return confirm('Bạn có muốn xóa sản phẩm này không?')" style="color: #fff">Xóa</a></span>
                                                 <span class="label label-info"><a href="{{ route('editProduct', ['id'=>$item->id]) }}" style="color: #fff">Sửa</a></span>

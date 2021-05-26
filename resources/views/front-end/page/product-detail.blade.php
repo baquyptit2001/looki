@@ -72,7 +72,7 @@
             <div class="col-lg-6">
                 <div class="single-product-info">
                     <div class="single-product-head">
-                        <h2 class="title mb-20">{{$pro->name.' '.$pro->size}}</h2>
+                        <h2 class="title mb-20">{{$pro->name}}</h2>
                         <div class="star-content mb-20">
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
@@ -86,38 +86,37 @@
                                 review</a>
                         </div>
                     </div>
-                    <div class="product-body mb-40">
-                        <div class="d-flex align-items-center mb-30">
-                            @if($pro->sale_price==0)
-                            <span class="product-price mr-20">
-                                {{$pro->price}} $
-                            </span>
-                            @else
-                            <span class="product-price mr-20">
-                                <del class="del">{{$pro->price}} $</del>
-                                <span class="onsale">{{$pro->sale_price}} $</span>
-                            </span>
-                            @endif
-                            <span class="badge position-static bg-dark rounded-0">Save 10%</span>
-                        </div>
-                        <p>
-                            Block out the haters with the fresh adidas® Originals Kaval
-                            Windbreaker Face Cream.
-                        </p>
-                        <ul>
-                            <li>Part of the Kaval Collection.</li>
-                            <li>
-                                Regular fit is eased, but not sloppy, and perfect for any
-                                activity.
-                            </li>
-                            <li>
-                                Plain-woven Face Cream specifically constructed for freedom of
-                                movement.
-                            </li>
-                        </ul>
-                    </div>
                     <form action="{{ route('add-cart',['id' => $pro->id]) }}" method="GET">
-                        @csrf
+                    @csrf
+                        <div class="product-body mb-40" id="pro-detail">
+                            <div class="d-flex align-items-center mb-30">
+                                <span class="product-price mr-20">
+                                    
+                                </span>
+                            </div>
+                            <p>
+                                Block out the haters with the fresh adidas® Originals Kaval
+                                Windbreaker Face Cream.
+                            </p>
+                            <ul>
+                                <li>Part of the Kaval Collection.</li>
+                                <li>
+                                    Regular fit is eased, but not sloppy, and perfect for any
+                                    activity.
+                                </li>
+                                <li>
+                                    Plain-woven Face Cream specifically constructed for freedom of
+                                    movement.
+                                </li>
+                            </ul>
+                            <div class="product-size">
+                                <select name="product_size" class="price-option">
+                                @foreach ($pro->size as $sz)
+                                    <option value="{{ $sz->id }}" price="{{ ($sz->sale_price==0) ? $sz->price : $sz->sale_price }}">{{ $sz->size }}</option>  
+                                @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="product-footer">
                             <div class="product-count style d-flex flex-column flex-sm-row mt-30 mb-30">
                                 <div class="count d-flex">
@@ -148,9 +147,9 @@
                                     href="#"
                                     data-toggle="modal"
                                     data-target="#compare"
-                                  @else
+                                    @else
                                     href="{{ route('addCompare', ['id'=>$pro->id]) }}"
-                                  @endif><i class="icon-shuffle"></i> Add to compare</a>
+                                    @endif><i class="icon-shuffle"></i> Add to compare</a>
                             </div>
                             <div class="pro-social-links mt-10">
                                 <ul class="d-flex align-items-center">
@@ -400,13 +399,11 @@
                                                         <span class="ion-ios-star de-selected"></span>
                                                     </div>
                                                     <div class="d-flex align-items-center justify-content-between">
-                                                        @if($item->sale_price==0)
-                                                            <span class="product-price">{{$item->price}} $</span>
-                                                        @else
-                                                            <span class="product-price">{{$item->sale_price}} $</span>
-                                                            <span><del>{{$item->price}} $</del></span>
-                                                        @endif
-                                                        <a class="pro-btn" href="{{route('add-cart', $item->id)}}">
+                                                        <span class="product-price">{{$item->minPrice()}} $</span>
+                                                        <a class="pro-btn action"
+                                                        href="#"
+                                                        data-toggle="modal"
+                                                        data-target="#quick-view{{ $item->id }}">
                                                             <i class="icon-basket"></i>
                                                         </a>
                                                     </div>

@@ -47,6 +47,9 @@ class ProductController extends Controller
     public function store(ProductAddRequest $request)
     {
         //upload ảnh
+        if($request->sale_price == null){
+            $request->merge(['sale_price' => 0]);
+        }
         $file_name = $request->upload->getClientOriginalName();
         $request->upload->move(public_path('uploads/product'), $file_name);
         $request->merge(['image'=>$file_name]);
@@ -62,6 +65,8 @@ class ProductController extends Controller
                 ]);
             }
         }
+        $request->merge(['product_id'=>$product->id]);
+        ProductSize::create($request->only(['size', 'product_id', 'price', 'sale_price']));
         return redirect()->route('listProduct');
     }
 
@@ -155,6 +160,43 @@ class ProductController extends Controller
 
         $pro->update($req->all());
         return redirect()->route('listProduct');
+    }
+
+    public function editSize($id)
+    {
+        $size = ProductSize::find($id);
+        return view('admin.page.product.size.edit', compact('size'));
+    }
+
+    public function updateSize(Request $request, $id)
+    {
+        if($request->sale_price == null)
+            $request->merge(['sale_price' => 0]);
+        $size = ProductSize::find($id);
+        $size->update($request->all());
+        return redirect()->route('listSize');
+    }
+
+    public function listSize($id)
+    {
+        $product = Product::find($id);
+        return view('admin.page.product.size.index', compact('product'));
+    }
+
+    public function addSize(Request $request, $id)
+    {
+        if($request->sale_price == null)
+            $request->merge(['sale_price' => 0]);
+        $request->merge(['product_id' => $id]);
+        ProductSize::create($request->all());
+        return redirect()->back();
+    }
+
+    public function deleteSize($id)
+    {
+        $size = ProductSize::find($id);
+        $size->delete();
+        return redirect()->back();
     }
 
     /**

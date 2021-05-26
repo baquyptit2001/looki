@@ -60,6 +60,7 @@
                                         <tr>
                                             <th class="border-0 text-uppercase small font-weight-bold">ID</th>
                                             <th class="border-0 text-uppercase small font-weight-bold">Item</th>
+                                            <th class="border-0 text-uppercase small font-weight-bold">Size</th>
                                             <th class="border-0 text-uppercase small font-weight-bold">Quantity</th>
                                             <th class="border-0 text-uppercase small font-weight-bold">Unit Cost</th>
                                             <th class="border-0 text-uppercase small font-weight-bold">Total</th>
@@ -70,6 +71,7 @@
                                             <tr>
                                                 <td>{{ $item->product->id }}</td>
                                                 <td>{{ $item->product->name }}</td>
+                                                <td>{{ $item->size->size }}</td>
                                                 <td>{{ $item->quantity }}</td>
                                                 <td>${{ $item->price }}</td>
                                                 <td>${{ $item->price * $item->quantity }}</td>
