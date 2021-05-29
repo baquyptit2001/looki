@@ -174,7 +174,7 @@ class ProductController extends Controller
             $request->merge(['sale_price' => 0]);
         $size = ProductSize::find($id);
         $size->update($request->all());
-        return redirect()->route('listSize');
+        return redirect()->back();
     }
 
     public function listSize($id)
