@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
+        $category = Category::orderBy('parent_id', 'asc')->get();
         $parent[0] = 'Danh mục cha';
         foreach($category as $item){
             $parent[$item->id] = $item->name;
