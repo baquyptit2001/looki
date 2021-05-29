@@ -6,7 +6,7 @@ use App\Models\Brand;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\imgProduct;
-use App\Models\productSize;
+use App\Models\ProductSize;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductAddRequest;
