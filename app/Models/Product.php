@@ -27,7 +27,7 @@ class Product extends Model
     }
 
     public function size(){
-        return $this->hasMany(ProductSize::class, 'product_id', 'id')->orderBy('size', 'asc');
+        return $this->hasMany(ProductSize::class, 'product_id', 'id');
     }
 
     public function check(){
