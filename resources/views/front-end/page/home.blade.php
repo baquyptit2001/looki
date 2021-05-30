@@ -521,7 +521,7 @@
                                                   <div
                                                       class="d-flex align-items-center justify-content-between"
                                                   >
-                                                      <span>{{$item->minPrice()}} $</span>
+                                                    <span class="product-price">{{$item->minPrice()}} $</span>
 
                                                       <div class="d-flex justify-content-end w-50">
                                                           <a
