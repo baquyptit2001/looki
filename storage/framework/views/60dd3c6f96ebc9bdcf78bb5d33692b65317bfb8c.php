@@ -69,7 +69,7 @@
                                         <input type="file" name="upload" id="image" class="form-control" onchange="loadFile(event)" placeholder="Tên sản phẩm">
                                         <small class="form-control-feedback">anh sản phẩm</small>
                                         <br>
-                                        <img alt="product_image" id="show" src="<?php echo e(asset('uploads/'.$pro->image)); ?>">
+                                        <img alt="product_image" id="show" src="<?php echo e(asset('uploads/product/'.$pro->image)); ?>">
                                         <script>
                                             var loadFile = function(event) {
                                                 var image = document.getElementById('show');
