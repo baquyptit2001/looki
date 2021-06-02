@@ -1,3 +1,5 @@
+<?php $__env->startSection('title', 'Contact Us'); ?>
+
 <?php $__env->startSection('main'); ?>
     <!-- breadcrumb-section start -->
 <nav class="breadcrumb-section theme1 bg-lighten2 pt-110 pb-110">
@@ -22,9 +24,10 @@
   <!-- breadcrumb-section end -->
   <!-- map start -->
   <div class="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.5480490037507!2d90.42897841550803!3d23.76349088458297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c78ab2187d4d%3A0x4d5f8a6c610c144b!2sHasTech%20Digital%20Item%20%26%20Service%20Provider!5e0!3m2!1sen!2sua!4v1595747193974!5m2!1sen!2sua"
-    ></iframe>
+    
+    <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    src="https://maps.google.com/maps?height=600&amp;hl=en&amp;q=Học Viện Công nghệ Bưu Chính Viễn Thông Hà Nội&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+    </iframe>
   </div>
   <!-- map end -->
   <!-- contact-section satrt -->
@@ -41,16 +44,16 @@
               nunc putamus parum claram anteposuerit litterarum formas human.
             </p>
             <!--  single contact block  -->
-  
+
             <div class="single-contact-block">
               <h4><i class="fa fa-fax"></i> Address</h4>
               <p>123 Main Street, Anytown, CA 12345 – USA</p>
             </div>
-  
+
             <!--  End of single contact block -->
-  
+
             <!--  single contact block -->
-  
+
             <div class="single-contact-block">
               <h4><i class="fa fa-phone"></i> Phone</h4>
               <p>
@@ -58,11 +61,11 @@
               </p>
               <p><a href="tel:1009678456">Hotline: 1009 678 456</a></p>
             </div>
-  
+
             <!-- End of single contact block -->
-  
+
             <!--  single contact block -->
-  
+
             <div class="single-contact-block">
               <h4><i class="fas fa-envelope"></i> Email</h4>
               <p>
@@ -74,10 +77,10 @@
                 >
               </p>
             </div>
-  
+
             <!--=======  End of single contact block  =======-->
           </div>
-  
+
           <!--=======  End of contact page side content  =======-->
         </div>
         <div class="col-lg-6 col-12 mb-30">
@@ -132,4 +135,5 @@
   </section>
   <!-- contact-section end -->
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('front-end.layout.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\ADMIN\Desktop\bkap\looki\resources\views/front-end/page/contact.blade.php ENDPATH**/ ?>
