@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'Sabberworm\\CSS' => array($vendorDir . '/sabberworm/php-css-parser/lib'),
     'Mockery' => array($vendorDir . '/mockery/mockery/library'),
+    'Barryvdh' => array($vendorDir . '/barryvdh/reflection-docblock/src'),
 );
