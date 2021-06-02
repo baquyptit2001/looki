@@ -43,12 +43,16 @@ class Product extends Model
 
     public function isSale()
     {
-        $sale = $this->size;
-        foreach ($sale as $item) {
-            if($item->sale_price > 0)
-                return 1;
-        }
-        return 0;
+//        $sale = $this->size;
+//        foreach ($sale as $item) {
+//            if($item->sale_price > 0)
+//                return 1;
+//        }
+//        return 0;
+        return count(ProductSize::where([
+            ['product_id', '=', $this->id],
+            ['sale_price', '>', '0']
+        ])->get());
     }
 
     public function minPrice()

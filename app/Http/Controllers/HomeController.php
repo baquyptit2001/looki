@@ -32,8 +32,4 @@ class HomeController extends Controller
         Comment::create($request->all());
         return redirect()->back();
     }
-    public function FunctionName(Type $var = null)
-    {
-        # code...
-    }
 }

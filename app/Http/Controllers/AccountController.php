@@ -29,14 +29,14 @@ class AccountController extends Controller
     {
         return view('front-end.page.forgot-pass');
     }
-    
+
     public function checkForgot(Request $request){
         $request->validate(['email' => 'required|email|exists:users,email']);
 
         $status = Password::sendResetLink(
             $request->only('email')
         );
-        
+
         return $status === Password::RESET_LINK_SENT
                     ? back()->with(['status' => __($status), 'success'=>'Email phục hồi mật khẩu đã được gửi!!'])
                     : back()->withErrors(['email' => __($status)]);
@@ -54,7 +54,7 @@ class AccountController extends Controller
             'email' => 'required|email',
             'password' => 'required|confirmed',
         ]);
-    
+
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) use ($request) {
@@ -65,7 +65,7 @@ class AccountController extends Controller
                 event(new PasswordReset($user));
             }
         );
-    
+
         return $status == Password::PASSWORD_RESET
                     ? redirect()->route('login')->with('status', __($status))
                     : back()->withErrors(['email' => [__($status)]]);
@@ -201,7 +201,7 @@ class AccountController extends Controller
         // return redirect()->route('logOut');
         return redirect()->route('home');
     }
-    
+
     public function changePassword(Request $request){
         $id = Auth::user()->id;
         $account = User::find($id);
