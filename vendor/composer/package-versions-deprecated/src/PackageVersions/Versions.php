@@ -51,10 +51,12 @@ final class Versions
   'http-interop/http-factory-guzzle' => '1.0.0@34861658efb9899a6618cef03de46e2a52c80fc0',
   'laravel/framework' => 'v8.42.1@41ec4897a70eb8729cf0ff34a8354413c54e42a6',
   'laravel/scout' => 'v9.1.0@b31bc1edb6498ae5807011091cb41624f109e0d5',
+  'laravel/socialite' => 'v5.2.3@1960802068f81e44b2ae9793932181cf1cb91b5c',
   'laravel/tinker' => 'v2.6.1@04ad32c1a3328081097a181875733fa51f402083',
   'league/commonmark' => '1.6.2@7d70d2f19c84bcc16275ea47edabee24747352eb',
   'league/flysystem' => '1.1.3@9be3b16c877d477357c015cec057548cf9b2a14a',
   'league/mime-type-detection' => '1.7.0@3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+  'league/oauth1-client' => 'v1.9.0@1e7e6be2dc543bf466236fb171e5b20e1b06aee6',
   'meilisearch/meilisearch-php' => 'v0.18.1@f8b9831d635443b5fd28b83b4675c43f9b4b3c2c',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'nesbot/carbon' => '2.48.0@d3c447f21072766cddec3522f9468a5849a76147',
@@ -172,7 +174,7 @@ final class Versions
   'seld/phar-utils' => '1.1.1@8674b1d84ffb47cc59a101f5d5a3b61e87d23796',
   'symfony/filesystem' => 'v5.3.0@348116319d7fb7d1faa781d26a48922428013eb2',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => 'dev-master@3305613fa3e7d2445432bf2ac1571dd3434c9394',
+  'laravel/laravel' => 'dev-master@4106fb18abfdfce28fbe1f2f72e78bc6638e4bde',
 );
 
     private function __construct()
