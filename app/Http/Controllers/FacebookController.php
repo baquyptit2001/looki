@@ -30,7 +30,7 @@ class FacebookController extends Controller
                     'user_name' => $user->name,
                     'email' => $user->email,
                     'remember_token' => $user->id,
-                    'display_name' => 'Guest',
+                    'display_name' => 'Facebooker',
                     'password' => 'abc'
                 ]);
     
