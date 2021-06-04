@@ -34,11 +34,12 @@
     30 => 'Laravel\\Tinker\\TinkerServiceProvider',
     31 => 'Carbon\\Laravel\\ServiceProvider',
     32 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    33 => 'Barryvdh\\DomPDF\\ServiceProvider',
-    34 => 'App\\Providers\\AppServiceProvider',
-    35 => 'App\\Providers\\AuthServiceProvider',
-    36 => 'App\\Providers\\EventServiceProvider',
-    37 => 'App\\Providers\\RouteServiceProvider',
+    33 => 'Laravel\\Socialite\\SocialiteServiceProvider',
+    34 => 'Barryvdh\\DomPDF\\ServiceProvider',
+    35 => 'App\\Providers\\AppServiceProvider',
+    36 => 'App\\Providers\\AuthServiceProvider',
+    37 => 'App\\Providers\\EventServiceProvider',
+    38 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (

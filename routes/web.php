@@ -11,6 +11,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\CompareController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\ShopListController;
 use App\Http\Controllers\WishListController;
 use App\Http\Controllers\DashBoardController;
@@ -108,5 +109,8 @@ Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete-cart
 Route::post('/checkout',[CartController::class, 'cartCheckout'])->name('cartCheckout');
 Route::get('/brand/{id}', [ShopListController::class, 'brand'])->name('brand');
 Route::get('/category/{id}', [ShopListController::class, 'category'])->name('category');
+Route::get('auth/facebook', [FacebookController::class, 'facebookRedirect']);
+
+Route::get('auth/facebook/callback', [FacebookController::class, 'loginWithFacebook']);
 //Route::get('/shop-list',[ShopListController::class,'list'])->name('list-view');
 //Route::get('/shop-list',[ShopListController::class,'menu'])->name('menu-view');
