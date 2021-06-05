@@ -15,11 +15,11 @@ class Product extends Model
     public $fillable = ['name', 'category_id', 'image', 'description', 'brand_id', 'status'];
 
     public function category(){
-        return $this->belongsTo('App\Models\Category', 'category_id', 'id');
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
 
     public function brand(){
-        return $this->belongsTo('App\Models\Brand', 'brand_id', 'id');
+        return $this->belongsTo('App\Models\Brand', 'brand_id');
     }
 
     public function img(){

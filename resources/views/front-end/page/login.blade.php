@@ -75,12 +75,16 @@
                         placeholder="Password"
                       />
                       <div class="button-box">
-                        <div class="login-toggle-btn">
-                          <input id="remember" type="checkbox" />
-                          <label for="remember">Remember me</label>
-                          <a href="{{ route('forgot') }}">Forgot Password?</a>
+                        <div class="login-toggle-btn row">
+                          <div class="col-sm-6">
+                            <input id="remember" type="checkbox" />
+                            <label for="remember">Remember me</label>
+                          </div>
+                          <div class="col-sm-6">
+                            <a href="{{ route('forgot') }}">Forgot Password?</a>
+                          </div>
                         </div>
-                        <button type="submit" class="btn btn-dark btn--md">
+                        <button type="submit" class="btn btn-dark btn--md w-100">
                           <span>Login</span>
                         </button>
                       </div>

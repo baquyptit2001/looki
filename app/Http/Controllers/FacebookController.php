@@ -20,11 +20,11 @@ class FacebookController extends Controller
         try {
     
             $user = Socialite::driver('facebook')->user();
-            $isUser = User::where('remember_token', $user->id)->first();
+            $isUser = User::where('email', $user->email)->first();
      
             if($isUser){
                 Auth::login($isUser);
-                return redirect('/dashboard');
+                return redirect()->route('home');
             }else{
                 $createUser = User::create([
                     'user_name' => $user->name,
@@ -33,7 +33,6 @@ class FacebookController extends Controller
                     'display_name' => 'Facebooker',
                     'password' => 'abc'
                 ]);
-    
                 Auth::login($createUser);
                 return redirect()->route('home');
             }
