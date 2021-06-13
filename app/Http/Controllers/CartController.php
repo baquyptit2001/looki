@@ -16,9 +16,15 @@ class CartController extends Controller
 {
 
     public function add(CartHelper $cart, $id, Request $req){
-        $product = Product::find($id);
-        $size = ProductSize::find($req->product_size);
-        $cart->add($product, $size->id, $req->quantity);
+        try {
+            //code...
+            // dd($req);
+            $product = Product::find($id);
+            $size = ProductSize::find($req->product_size);
+            $cart->add($product, $size->id, $req->quantity);
+        } catch (\Throwable $th) {
+            return redirect()->back();
+        }
         return redirect()->back();
     }
     public function cartCheckout(Request $req, CartHelper $cart)

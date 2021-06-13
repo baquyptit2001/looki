@@ -46,11 +46,11 @@
                                 name="quantity[{{$item['id']}}]"
                               />
                               <div class="button-group">
-                                <button class="count-btn increment">
-                                  <i wire:click="increase({{ $item['id'] }})" class="fas fa-chevron-up"></i>
+                                <button wire:click="increase({{ $item['id'] }})" class="count-btn increment">
+                                  <i class="fas fa-chevron-up"></i>
                                 </button>
-                                <button class="count-btn decrement">
-                                  <i wire:click="decrease({{ $item['id'] }})"class="fas fa-chevron-down"></i>
+                                <button wire:click="decrease({{ $item['id'] }})" class="count-btn decrement">
+                                  <i class="fas fa-chevron-down"></i>
                                 </button>
                               </div>
                             </div>
