@@ -66,7 +66,7 @@
                           ></a>
                         </td>
                         <td class="text-center">
-                          <a href="#" class="btn btn-dark btn--lg">add to cart</a>
+                          <a href="{{ route('product', ['id'=>$item['product_id']]) }}" class="btn btn-dark btn--lg">View Product</a>
                         </td>
                       </tr>
                     @endforeach

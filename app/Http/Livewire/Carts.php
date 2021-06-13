@@ -37,7 +37,7 @@ class Carts extends Component
 
     public function decrease($id){
         if(isset($this->cart[$id])){
-            if($this->cart[$id]['quantity']>0)
+            if($this->cart[$id]['quantity']>1)
                 $this->cart[$id]['quantity']--;
         }
         session(['cart'=>$this->cart]);
