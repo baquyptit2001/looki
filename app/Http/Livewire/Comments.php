@@ -34,7 +34,7 @@ class Comments extends Component
             'product_id'=>$this->idd,
             'user_id'=>$user,
             'comment'=>$this->comment,
-            'rate'=>count($this->rate),
+            'rate'=>$this->rating,
         ]);
         $this->comment = '';
         $this->init();
