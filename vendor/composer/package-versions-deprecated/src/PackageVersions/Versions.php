@@ -57,6 +57,7 @@ final class Versions
   'league/flysystem' => '1.1.3@9be3b16c877d477357c015cec057548cf9b2a14a',
   'league/mime-type-detection' => '1.7.0@3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
   'league/oauth1-client' => 'v1.9.0@1e7e6be2dc543bf466236fb171e5b20e1b06aee6',
+  'livewire/livewire' => 'v2.4.4@33101c83b75728651b9e668a4559f97def7c9138',
   'meilisearch/meilisearch-php' => 'v0.18.1@f8b9831d635443b5fd28b83b4675c43f9b4b3c2c',
   'monolog/monolog' => '2.2.0@1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
   'nesbot/carbon' => '2.48.0@d3c447f21072766cddec3522f9468a5849a76147',
@@ -174,7 +175,7 @@ final class Versions
   'seld/phar-utils' => '1.1.1@8674b1d84ffb47cc59a101f5d5a3b61e87d23796',
   'symfony/filesystem' => 'v5.3.0@348116319d7fb7d1faa781d26a48922428013eb2',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => 'dev-master@8c71c04f9b82cf48eb84f32f03755aff8ea4477f',
+  'laravel/laravel' => 'dev-master@4a3700cc64661849c8905e8d255e13bc30ce948e',
 );
 
     private function __construct()

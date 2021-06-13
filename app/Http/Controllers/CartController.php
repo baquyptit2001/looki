@@ -59,7 +59,7 @@ class CartController extends Controller
         return view('front-end.page.invoice', compact('order', 'detail'));
     }
     public function index(CartHelper $cart){
-        return view('front-end.page.cart', compact('cart'));
+        return view('front-end.page.cart');
     }
     public function update(Request $req, CartHelper $cart){
         $cart->update($req, $cart);

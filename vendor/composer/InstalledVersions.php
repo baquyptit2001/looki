@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '4106fb18abfdfce28fbe1f2f72e78bc6638e4bde',
+    'reference' => '4a3700cc64661849c8905e8d255e13bc30ce948e',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -622,7 +622,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '4106fb18abfdfce28fbe1f2f72e78bc6638e4bde',
+      'reference' => '4a3700cc64661849c8905e8d255e13bc30ce948e',
     ),
     'laravel/sail' => 
     array (
@@ -695,6 +695,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '1e7e6be2dc543bf466236fb171e5b20e1b06aee6',
+    ),
+    'livewire/livewire' => 
+    array (
+      'pretty_version' => 'v2.4.4',
+      'version' => '2.4.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '33101c83b75728651b9e668a4559f97def7c9138',
     ),
     'meilisearch/meilisearch-php' => 
     array (

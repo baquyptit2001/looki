@@ -85,6 +85,8 @@
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
     <link rel="stylesheet" href="assets/css/style.min.css" /> -->
+    <?php echo \Livewire\Livewire::styles(); ?>
+
 </head>
 
 <body>
@@ -545,6 +547,7 @@
                       <span class="badge cbdg1"><?php echo e($cart->total_quantity()); ?></span>
                     </span>
                   </a>
+                  
                 </li>
                 <!-- cart block end -->
               </ul>
@@ -1031,6 +1034,8 @@
           });
         });
       </script>
+      <?php echo \Livewire\Livewire::scripts(); ?>
+
       <!--***************************
             Minified  js
        ***************************-->

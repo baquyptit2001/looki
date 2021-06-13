@@ -110,7 +110,6 @@ Route::post('/checkout',[CartController::class, 'cartCheckout'])->name('cartChec
 Route::get('/brand/{id}', [ShopListController::class, 'brand'])->name('brand');
 Route::get('/category/{id}', [ShopListController::class, 'category'])->name('category');
 Route::get('auth/facebook', [FacebookController::class, 'facebookRedirect']);
-
 Route::get('auth/facebook/callback', [FacebookController::class, 'loginWithFacebook']);
 //Route::get('/shop-list',[ShopListController::class,'list'])->name('list-view');
 //Route::get('/shop-list',[ShopListController::class,'menu'])->name('menu-view');

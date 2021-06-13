@@ -85,6 +85,7 @@
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
     <link rel="stylesheet" href="assets/css/style.min.css" /> -->
+    @livewireStyles
 </head>
 
 <body>
@@ -550,6 +551,7 @@
                       <span class="badge cbdg1">{{ $cart->total_quantity() }}</span>
                     </span>
                   </a>
+                  {{-- @livewire('cart-quantity') --}}
                 </li>
                 <!-- cart block end -->
               </ul>
@@ -1034,6 +1036,7 @@
           });
         });
       </script>
+      @livewireScripts
       <!--***************************
             Minified  js
        ***************************-->
