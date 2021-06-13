@@ -102,7 +102,7 @@ Route::get('/blog-list',[BlogController::class, 'list'])->name('blog-list');
 Route::get('/blog-single',[BlogController::class, 'single'])->name('blog-single');
 Route::get('/shop-list',[ShopListController::class,'index'])->name('shop-list');
 Route::get('/product/{id}',[HomeController::class,'detail'])->name('product');
-Route::post('/product/{id}',[HomeController::class,'rate'])->name('rate');
+// Route::post('/product/{id}',[HomeController::class,'rate'])->name('rate');
 Route::get('/add-cart/{id}',[CartController::class,'add'])->name('add-cart');
 Route::post('/update',[CartController::class,'update'])->name('cart-update');
 Route::get('/delete/{id}', [CartController::class, 'delete'])->name('delete-cart');
