@@ -266,7 +266,7 @@
 <!-- OffCanvas Wishlist End -->
 
 <!-- OffCanvas Cart Start -->
-<div id="offcanvas-cart" class="offcanvas offcanvas-cart theme1">
+{{-- <div id="offcanvas-cart" class="offcanvas offcanvas-cart theme1">
   <div class="inner">
     <div class="head d-flex flex-wrap justify-content-between">
       <span class="title">Cart</span>
@@ -306,7 +306,8 @@
     >
     <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
   </div>
-</div>
+</div> --}}
+@livewire('cart-info')
 <!-- OffCanvas Cart End -->
 
 <!-- header start -->
@@ -545,13 +546,13 @@
                   </a>
                 </li>
                 <li class="mr-xl-0 cart-block position-relative">
-                  <a class="offcanvas-toggle" href="#offcanvas-cart">
+                  {{-- <a class="offcanvas-toggle" href="#offcanvas-cart">
                     <span class="position-relative">
                       <i class="icon-bag"></i>
                       <span class="badge cbdg1">{{ $cart->total_quantity() }}</span>
                     </span>
-                  </a>
-                  {{-- @livewire('cart-quantity') --}}
+                  </a> --}}
+                  @livewire('cart-quantity')
                 </li>
                 <!-- cart block end -->
               </ul>

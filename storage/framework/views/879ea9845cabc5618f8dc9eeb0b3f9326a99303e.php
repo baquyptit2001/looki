@@ -264,48 +264,22 @@
 <!-- OffCanvas Wishlist End -->
 
 <!-- OffCanvas Cart Start -->
-<div id="offcanvas-cart" class="offcanvas offcanvas-cart theme1">
-  <div class="inner">
-    <div class="head d-flex flex-wrap justify-content-between">
-      <span class="title">Cart</span>
-      <button class="offcanvas-close">×</button>
-    </div>
-    <ul class="minicart-product-list">
-        <?php $__currentLoopData = $cart->items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <li>
-                <a href="<?php echo e(route('product', $item['id'])); ?>" class="image"
-                  ><img src="<?php echo e(asset('uploads/product/'.$item['image'])); ?>" alt="Cart product Image"
-                /></a>
-                <div class="content">
-                  <a href="<?php echo e(route('product', ['id'=>$item['id']])); ?>" class="title"
-                    ><?php echo e($item['name']); ?></a
-                  >
-                  <span class="quantity-price"
-                    ><?php echo e($item['size'].' x '.$item['quantity']); ?> x <span class="amount"><?php echo e($item['price']); ?> $</span></span
-                  >
-                  <a href="<?php echo e(route('delete-cart', $item['id'])); ?>" class="remove">×</a>
-                </div>
-              </li>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-    </ul>
-    <div class="sub-total d-flex flex-wrap justify-content-between">
-      <strong>Subtotal :</strong>
-      <span class="amount">$<?php echo e($cart->total_price()); ?>.00</span>
-    </div>
-    <a
-      href="<?php echo e(Route('cart')); ?>"
-      class="btn btn-secondary btn--lg d-block d-sm-inline-block mr-sm-2"
-      >view cart</a
-    >
-    <a
-      href="<?php echo e(Route('checkout')); ?>"
-      class="btn btn-dark btn--lg d-block d-sm-inline-block mt-4 mt-sm-0" <?php echo e(($cart->total_quantity()) ? '':`style="pointer-events: none"`); ?>
 
-      >checkout</a
-    >
-    <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
-  </div>
-</div>
+<?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('cart-info')->html();
+} elseif ($_instance->childHasBeenRendered('zPZ5rHz')) {
+    $componentId = $_instance->getRenderedChildComponentId('zPZ5rHz');
+    $componentTag = $_instance->getRenderedChildComponentTagName('zPZ5rHz');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('zPZ5rHz');
+} else {
+    $response = \Livewire\Livewire::mount('cart-info');
+    $html = $response->html();
+    $_instance->logRenderedChild('zPZ5rHz', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
 <!-- OffCanvas Cart End -->
 
 <!-- header start -->
@@ -541,13 +515,22 @@
                   </a>
                 </li>
                 <li class="mr-xl-0 cart-block position-relative">
-                  <a class="offcanvas-toggle" href="#offcanvas-cart">
-                    <span class="position-relative">
-                      <i class="icon-bag"></i>
-                      <span class="badge cbdg1"><?php echo e($cart->total_quantity()); ?></span>
-                    </span>
-                  </a>
                   
+                  <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('cart-quantity')->html();
+} elseif ($_instance->childHasBeenRendered('SeSFF9u')) {
+    $componentId = $_instance->getRenderedChildComponentId('SeSFF9u');
+    $componentTag = $_instance->getRenderedChildComponentTagName('SeSFF9u');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('SeSFF9u');
+} else {
+    $response = \Livewire\Livewire::mount('cart-quantity');
+    $html = $response->html();
+    $_instance->logRenderedChild('SeSFF9u', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
                 </li>
                 <!-- cart block end -->
               </ul>

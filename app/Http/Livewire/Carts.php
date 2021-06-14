@@ -19,6 +19,8 @@ class Carts extends Component
     public function update()
     {
         session(['cart'=>$this->cart]);
+        $this->emitTo('cart-quantity', 'init');
+        $this->emitTo('cart-info', 'init');
     }
 
     public function delete($id){
@@ -26,6 +28,8 @@ class Carts extends Component
             unset($this->cart[$id]);
         }
         session(['cart'=>$this->cart]);
+        $this->emitTo('cart-quantity', 'init');
+        $this->emitTo('cart-info', 'init');
     }
 
     public function increase($id){
@@ -33,6 +37,8 @@ class Carts extends Component
         // if(isset($this->cart[$id])){
         // }
         session(['cart'=>$this->cart]);
+        $this->emitTo('cart-quantity', 'init');
+        $this->emitTo('cart-info', 'init');
     }
 
     public function decrease($id){
@@ -41,6 +47,8 @@ class Carts extends Component
                 $this->cart[$id]['quantity']--;
         // }
         session(['cart'=>$this->cart]);
+        $this->emitTo('cart-quantity', 'init');
+        $this->emitTo('cart-info', 'init');
     }
 
     public function render()
