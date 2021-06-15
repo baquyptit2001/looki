@@ -268,15 +268,15 @@
 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-info')->html();
-} elseif ($_instance->childHasBeenRendered('zPZ5rHz')) {
-    $componentId = $_instance->getRenderedChildComponentId('zPZ5rHz');
-    $componentTag = $_instance->getRenderedChildComponentTagName('zPZ5rHz');
+} elseif ($_instance->childHasBeenRendered('WYAibQG')) {
+    $componentId = $_instance->getRenderedChildComponentId('WYAibQG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('WYAibQG');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('zPZ5rHz');
+    $_instance->preserveRenderedChild('WYAibQG');
 } else {
     $response = \Livewire\Livewire::mount('cart-info');
     $html = $response->html();
-    $_instance->logRenderedChild('zPZ5rHz', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('WYAibQG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -519,15 +519,15 @@ echo $html;
                   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-quantity')->html();
-} elseif ($_instance->childHasBeenRendered('SeSFF9u')) {
-    $componentId = $_instance->getRenderedChildComponentId('SeSFF9u');
-    $componentTag = $_instance->getRenderedChildComponentTagName('SeSFF9u');
+} elseif ($_instance->childHasBeenRendered('dwlQFal')) {
+    $componentId = $_instance->getRenderedChildComponentId('dwlQFal');
+    $componentTag = $_instance->getRenderedChildComponentTagName('dwlQFal');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('SeSFF9u');
+    $_instance->preserveRenderedChild('dwlQFal');
 } else {
     $response = \Livewire\Livewire::mount('cart-quantity');
     $html = $response->html();
-    $_instance->logRenderedChild('SeSFF9u', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('dwlQFal', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -873,6 +873,7 @@ echo $html;
       </div>
     </div>
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+  
   <!-- second modal -->
   <div class="modal fade style2" id="compare" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -960,16 +961,22 @@ echo $html;
   <!-- modals end -->
 
   <!-- search-box and overlay start -->
-  <div class="overlay">
-    <div class="scale"></div>
-    <form class="search-box" action="#">
-      <input type="text" name="search" placeholder="Search products..." />
-      <button id="close" type="submit">
-        <i class="ion-ios-search-strong"></i>
-      </button>
-    </form>
-    <button class="close"><i class="ion-android-close"></i></button>
-  </div>
+  
+  <?php
+if (! isset($_instance)) {
+    $html = \Livewire\Livewire::mount('search')->html();
+} elseif ($_instance->childHasBeenRendered('vh1nICj')) {
+    $componentId = $_instance->getRenderedChildComponentId('vh1nICj');
+    $componentTag = $_instance->getRenderedChildComponentTagName('vh1nICj');
+    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
+    $_instance->preserveRenderedChild('vh1nICj');
+} else {
+    $response = \Livewire\Livewire::mount('search');
+    $html = $response->html();
+    $_instance->logRenderedChild('vh1nICj', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+}
+echo $html;
+?>
   <!-- search-box and overlay end -->
 
 

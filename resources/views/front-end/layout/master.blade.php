@@ -893,6 +893,7 @@
       </div>
     </div>
   @endforeach
+  {{-- @livewire('modal-product') --}}
   <!-- second modal -->
   <div class="modal fade style2" id="compare" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -980,16 +981,31 @@
   <!-- modals end -->
 
   <!-- search-box and overlay start -->
-  <div class="overlay">
+  {{-- <div class="overlay">
     <div class="scale"></div>
     <form class="search-box" action="#">
       <input type="text" name="search" placeholder="Search products..." />
       <button id="close" type="submit">
         <i class="ion-ios-search-strong"></i>
       </button>
+      <div class="row search-result">
+        <div class="col-1 search-result-image"><a href=""><img src="{{ asset('uploads/product/2662_paulas_choice_kem_duong_ngay_duong_nhan_sieu_nhe_spf_30_2.jpg') }}" alt=""></a></div>
+        <div class="col-11 search-result-name"><a href="">Paula Choice</a></div>
+      </div>
     </form>
     <button class="close"><i class="ion-android-close"></i></button>
   </div>
+  <style>
+    .search-result{
+      margin-top: 5px;
+      background: #fff;
+    }
+    .search-result-name{
+      font-size: 25px;
+      font-weight: bold;
+    }
+  </style> --}}
+  @livewire('search')
   <!-- search-box and overlay end -->
 
 

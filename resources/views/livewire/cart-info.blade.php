@@ -18,7 +18,7 @@
                         <span class="quantity-price"
                             >{{$item['size'].' x '.$item['quantity']}} x <span class="amount">{{$item['price']}} $</span></span
                         >
-                        <a href="{{route('delete-cart', $item['id'])}}" class="remove">×</a>
+                        <button wire:click="remove({{ $item['id'] }})" class="remove" style="cursor: pointer;">×</button>
                         </div>
                     </li>
                 @endforeach

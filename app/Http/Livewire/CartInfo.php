@@ -17,6 +17,15 @@ class CartInfo extends Component
         $this->init();
     }
 
+    public function remove($id)
+    {
+        if(isset($this->cart[$id])){
+            unset($this->cart[$id]);
+        }
+        session(['cart'=>$this->cart]);
+        $this->emitTo('cart-quantity', 'init');
+    }
+
     public function init()
     {
         $this->cart = session('cart') ? session('cart') : [];
