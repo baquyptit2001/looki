@@ -6,16 +6,23 @@
         <button id="close" wire:click="clear()">
             <i class="ion-android-close"></i>
         </button>
-        @foreach ($product as $item)
-        <div class="row search-result">
-            <div class="col-1 search-result-image"><a href="{{ route('product', ['id'=>$item['id']]) }}"><img src="{{ asset('uploads/product/'.$item['image']) }}" alt=""></a></div>
-            <div class="col-11 search-result-name"><a href="{{ route('product', ['id'=>$item['id']]) }}">{{ $item['name'] }}</a></div>
+        <div class="result-container">
+            @foreach ($product as $item)
+                <div class="row search-result">
+                    <div class="col-1 search-result-image"><a href="{{ route('product', ['id'=>$item['id']]) }}"><img src="{{ asset('uploads/product/'.$item['image']) }}" alt=""></a></div>
+                    <div class="col-11 search-result-name"><a href="{{ route('product', ['id'=>$item['id']]) }}">{{ $item['name'] }}</a></div>
+                </div>
+            @endforeach
         </div>
-        @endforeach
     </form>
     <button class="close"><i class="ion-android-close"></i></button>
     </div>
     <style>
+    .result-container{
+        height: 350px;
+        overflow: hidden;
+        overflow-y: auto;
+    }
     .search-result{
         margin-top: 5px;
         background: #fff;
