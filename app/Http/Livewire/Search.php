@@ -20,6 +20,9 @@ class Search extends Component
     {
         if($this->string != '')
             $this->product = Product::where('name', 'like', '%' . $this->string . '%')->get()->toArray();
+        else{
+            $this->product = [];
+        }
     }
 
     public function clear()
