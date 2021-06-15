@@ -272,16 +272,8 @@
             <div class="col-12">
                 <nav class="pagination-section mt-30">
                     <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="ion-chevron-left"></i></a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#"><i class="ion-chevron-right"></i></a>
-                        </li>
+                        <?php echo e($product->links("pagination::bootstrap-4")); ?>
+
                     </ul>
                 </nav>
             </div>

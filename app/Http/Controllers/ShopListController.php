@@ -34,14 +34,14 @@ class ShopListController extends Controller
     public function brand($id)
     {
         $brand = Brand::find($id);
-        $product = Product::where('brand_id', $id)->get();
+        $product = Product::where('brand_id', $id)->paginate(2);
         return view('front-end.page.brand', compact('product', 'brand'));
     }
 
     public function category($id)
     {
         $category = Category::find($id);
-        $product = Product::where('category_id', $id)->get();
+        $product = Product::where('category_id', $id)->paginate(2);
         return view('front-end.page.category', compact('product', 'category'));
     }
 }
