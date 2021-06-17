@@ -54,7 +54,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="rating-form-style form-submit">
-                                                <textarea name="comment" placeholder="Message" wire:model="comment"></textarea>
+                                                <textarea id="textareaId" name="comment" placeholder="Message" wire:model="comment"></textarea>
                                                 <button class="btn btn-dark btn--md">
                                                     <span>Review</span>
                                                 </button>

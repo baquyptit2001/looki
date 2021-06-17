@@ -1,6 +1,6 @@
 @extends('front-end.layout.master')
 
-@section('title', 'Looki - Beauty & Cosmetics eCommerce Bootstrap 5 Template')
+@section('title', 'Bá Quý - B19DCCN536')
 
 @section('main')
     <!-- main slider start -->

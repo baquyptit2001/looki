@@ -268,15 +268,15 @@
 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-info')->html();
-} elseif ($_instance->childHasBeenRendered('WYAibQG')) {
-    $componentId = $_instance->getRenderedChildComponentId('WYAibQG');
-    $componentTag = $_instance->getRenderedChildComponentTagName('WYAibQG');
+} elseif ($_instance->childHasBeenRendered('JJSvrbB')) {
+    $componentId = $_instance->getRenderedChildComponentId('JJSvrbB');
+    $componentTag = $_instance->getRenderedChildComponentTagName('JJSvrbB');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('WYAibQG');
+    $_instance->preserveRenderedChild('JJSvrbB');
 } else {
     $response = \Livewire\Livewire::mount('cart-info');
     $html = $response->html();
-    $_instance->logRenderedChild('WYAibQG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('JJSvrbB', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -519,15 +519,15 @@ echo $html;
                   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-quantity')->html();
-} elseif ($_instance->childHasBeenRendered('dwlQFal')) {
-    $componentId = $_instance->getRenderedChildComponentId('dwlQFal');
-    $componentTag = $_instance->getRenderedChildComponentTagName('dwlQFal');
+} elseif ($_instance->childHasBeenRendered('KSvUUkA')) {
+    $componentId = $_instance->getRenderedChildComponentId('KSvUUkA');
+    $componentTag = $_instance->getRenderedChildComponentTagName('KSvUUkA');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('dwlQFal');
+    $_instance->preserveRenderedChild('KSvUUkA');
 } else {
     $response = \Livewire\Livewire::mount('cart-quantity');
     $html = $response->html();
-    $_instance->logRenderedChild('dwlQFal', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('KSvUUkA', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -965,15 +965,15 @@ echo $html;
   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('vh1nICj')) {
-    $componentId = $_instance->getRenderedChildComponentId('vh1nICj');
-    $componentTag = $_instance->getRenderedChildComponentTagName('vh1nICj');
+} elseif ($_instance->childHasBeenRendered('kurZVK1')) {
+    $componentId = $_instance->getRenderedChildComponentId('kurZVK1');
+    $componentTag = $_instance->getRenderedChildComponentTagName('kurZVK1');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('vh1nICj');
+    $_instance->preserveRenderedChild('kurZVK1');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('vh1nICj', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('kurZVK1', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -1021,6 +1021,13 @@ echo $html;
           $('#pro-detail').find('.price-option').change(function(){
             price = $(this).find('option:selected').attr('price');
             parent.find('.product-price').text(price+' $');
+          });
+          $("#textareaId").keypress(function (e) {
+              if(e.which === 13 && !e.shiftKey) {
+                  e.preventDefault();
+              
+                  $(this).closest("form").submit();
+              }
           });
         });
       </script>
