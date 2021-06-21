@@ -2,7 +2,7 @@
     <div class="overlay">
         <div class="scale"></div>
         <form class="search-box" action="" wire:submit.prevent="clear()">
-            <input wire:model="string" wire:keydown="init()" type="text" name="search" placeholder="Search products..." />
+            <input wire:model="string" wire:keydown="init()" type="text" autocomplete="off" name="search" placeholder="Search products..." />
             <button id="close" wire:click="clear()">
                 <i class="ion-android-close"></i>
             </button>

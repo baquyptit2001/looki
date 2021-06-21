@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Looki - Beauty & Cosmetics eCommerce Bootstrap 5 Template'); ?>
+<?php $__env->startSection('title', 'Bá Quý - B19DCCN536'); ?>
 
 <?php $__env->startSection('main'); ?>
     <!-- main slider start -->
