@@ -36,6 +36,6 @@ class MailNotify extends Mailable
         $data = ['detail'=>$this->detail, 'order'=>$this->order];
         $pdf = PDF::loadView('front-end.page.invoice', $data);
         // dd($data);
-        return $this->from('quynb201@gmail.com', 'Quy_Vjp_pr0_n01')->subject('Cảm ơn đã mua hàng !!')->markdown('front-end.page.invoice')->attachData($pdf->output(), "invoice.pdf");;
+        return $this->from('quynb201@gmail.com', 'Quy_Vjp_pr0_n01')->subject('Cảm ơn đã mua hàng !!')->markdown('front-end.page.invoice')->attachData($pdf->output(), "invoice.pdf");
     }
 }

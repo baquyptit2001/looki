@@ -16,7 +16,6 @@ class ShopListController extends Controller
 //        foreach ($product as $item){
 //            $total++;
 //        }
-        $request->session()->put('view', 1);
         $cat = Category::where('parent_id', 0)->get();
         return view('front-end.page.shop-list', compact('product', 'total', 'cat'));
     }

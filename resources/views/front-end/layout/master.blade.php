@@ -846,7 +846,7 @@
                           </div>
                         </div>
                         <div>
-                          <button class="btn btn-dark btn--xl mt-5 mt-sm-0">
+                          <button class="btn btn-dark btn--xl mt-5 mt-sm-0 cart-cart" data-product-id={{ $item->id }} >
                             <a href="{{ route('add-cart', ['id'=>$item->id]) }}" class="mr-2"><i class="ion-android-add"></i></span>
                             Add to cart
                           </a>

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c550e230-402f-4ddc-af60-82287f8e95c6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ShopListController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShopListController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/MailNotify.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/MailNotify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/71b4aa0932e3d40e8fd10e4baa98e40479b5f661.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/71b4aa0932e3d40e8fd10e4baa98e40479b5f661.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/879ea9845cabc5618f8dc9eeb0b3f9326a99303e.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/879ea9845cabc5618f8dc9eeb0b3f9326a99303e.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +169,7 @@
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
       <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
     </include_path>
   </component>
   <component name="ProjectId" id="1r8rQ5LQUjAeSyAwIKvrWOR5Czk" />
@@ -231,6 +236,7 @@
       <workItem from="1622817282965" duration="91000" />
       <workItem from="1622818984247" duration="186000" />
       <workItem from="1622904705821" duration="25000" />
+      <workItem from="1624703709936" duration="38000" />
     </task>
     <servers />
   </component>

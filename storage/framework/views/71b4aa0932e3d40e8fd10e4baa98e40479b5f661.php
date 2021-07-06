@@ -40,10 +40,7 @@
                         <span class="sub-title d-block"
                           ><a href="<?php echo e(route('product', ['id'=>$item['id']])); ?>" ><?php echo e($item['name']); ?></a></span
                         >
-                        <a href="#"
-                        data-toggle="modal"
-                        data-target="#quick-view<?php echo e($item['id']); ?>"
-                        class="action btn btn-dark btn--lg">
+                        <a href="<?php echo e(route('product', ['id'=>$item['id']])); ?>" class="action btn btn-dark btn--lg">
                           add to cart</a
                         >
                       </th>

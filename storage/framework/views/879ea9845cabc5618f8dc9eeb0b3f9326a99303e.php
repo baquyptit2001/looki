@@ -268,15 +268,15 @@
 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-info')->html();
-} elseif ($_instance->childHasBeenRendered('Ntt4iBL')) {
-    $componentId = $_instance->getRenderedChildComponentId('Ntt4iBL');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Ntt4iBL');
+} elseif ($_instance->childHasBeenRendered('5jmNZTw')) {
+    $componentId = $_instance->getRenderedChildComponentId('5jmNZTw');
+    $componentTag = $_instance->getRenderedChildComponentTagName('5jmNZTw');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Ntt4iBL');
+    $_instance->preserveRenderedChild('5jmNZTw');
 } else {
     $response = \Livewire\Livewire::mount('cart-info');
     $html = $response->html();
-    $_instance->logRenderedChild('Ntt4iBL', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('5jmNZTw', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -519,15 +519,15 @@ echo $html;
                   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('cart-quantity')->html();
-} elseif ($_instance->childHasBeenRendered('HaN4MMH')) {
-    $componentId = $_instance->getRenderedChildComponentId('HaN4MMH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('HaN4MMH');
+} elseif ($_instance->childHasBeenRendered('Tm4x19s')) {
+    $componentId = $_instance->getRenderedChildComponentId('Tm4x19s');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Tm4x19s');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('HaN4MMH');
+    $_instance->preserveRenderedChild('Tm4x19s');
 } else {
     $response = \Livewire\Livewire::mount('cart-quantity');
     $html = $response->html();
-    $_instance->logRenderedChild('HaN4MMH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Tm4x19s', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -826,7 +826,7 @@ echo $html;
                           </div>
                         </div>
                         <div>
-                          <button class="btn btn-dark btn--xl mt-5 mt-sm-0">
+                          <button class="btn btn-dark btn--xl mt-5 mt-sm-0 cart-cart" data-product-id=<?php echo e($item->id); ?> >
                             <a href="<?php echo e(route('add-cart', ['id'=>$item->id])); ?>" class="mr-2"><i class="ion-android-add"></i></span>
                             Add to cart
                           </a>
@@ -965,15 +965,15 @@ echo $html;
   <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('search')->html();
-} elseif ($_instance->childHasBeenRendered('ouZ6AtX')) {
-    $componentId = $_instance->getRenderedChildComponentId('ouZ6AtX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ouZ6AtX');
+} elseif ($_instance->childHasBeenRendered('HoQOv1M')) {
+    $componentId = $_instance->getRenderedChildComponentId('HoQOv1M');
+    $componentTag = $_instance->getRenderedChildComponentTagName('HoQOv1M');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ouZ6AtX');
+    $_instance->preserveRenderedChild('HoQOv1M');
 } else {
     $response = \Livewire\Livewire::mount('search');
     $html = $response->html();
-    $_instance->logRenderedChild('ouZ6AtX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('HoQOv1M', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
